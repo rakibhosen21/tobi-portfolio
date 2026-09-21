@@ -194,11 +194,146 @@ Today, I'm focused on creating useful content, helping communities grow, support
       status: "Ongoing",
     },
   ],
+  heroCredLine:
+    "Ambassador @ BestChange & Action Model · Official KOL @ Bitget Wallet",
+  // EDIT THIS: swap in /assets/obito-fight.webm when you have the file.
+  fightVideo: "/assets/obito-fight.webm",
+  fightPoster: "/assets/dog-bg.jpg",
+  ambassadors: [
+    {
+      name: "BestChange",
+      handle: "bestchangeeng",
+      href: "https://x.com/bestchangeeng",
+      role: "Ambassador",
+      summary: "Representing BestChange as an active ambassador.",
+      logo: "/assets/partners/bestchange.jpg",
+    },
+    {
+      name: "Action Model",
+      handle: "ActionModelAI",
+      href: "https://x.com/ActionModelAI",
+      role: "Ambassador",
+      summary: "Representing Action Model as an active ambassador.",
+      logo: "/assets/partners/action-model.jpg",
+    },
+  ],
+  kol: {
+    name: "Bitget Wallet",
+    handle: "BitgetWallet",
+    href: "https://x.com/BitgetWallet",
+    role: "Official KOL of Bitget Wallet",
+    summary: "Official KOL of Bitget Wallet.",
+    logo: "/assets/partners/bitget-wallet.jpg",
+  },
+  proof: [
+    {
+      project: "Action Model",
+      excerpt: "Your everyday clicks can train community-owned AI — train it, earn it, own it. NeoSoul campaign breakdown.",
+      views: "7.6K",
+      likes: "72",
+      replies: "52",
+      href: "https://x.com/ox_tobiiii/status/2097496137603432783",
+    },
+    {
+      project: "CT",
+      excerpt: "Most hyped mints on CT that day — zecfrogs, Zeckers, zaddrnet, zentinels. Real-time mint coverage.",
+      views: "5.2K",
+      likes: "48",
+      replies: "18",
+      href: "https://x.com/ox_tobiiii/status/2101946032070516917",
+    },
+    {
+      project: "ActionFi",
+      excerpt: "Weekend 2x points on SIXR daily tasks — $100K pool, top 200 leaderboard. Simple campaign update.",
+      views: "3.2K",
+      likes: "30",
+      replies: "28",
+      href: "https://x.com/ox_tobiiii/status/2096076254135128066",
+    },
+    {
+      project: "Action Model",
+      excerpt: "Action Model marketplace in plain English — AI workflows, $LAM burns, and how creators get paid.",
+      views: "2.1K",
+      likes: "38",
+      replies: "24",
+      href: "https://x.com/ox_tobiiii/status/2097860326205395121",
+    },
+    {
+      project: "ActionFi",
+      excerpt: "Congrats to 40 ActionFi lottery winners. Stay consistent — NeoSoul + SIXR still live.",
+      views: "1.8K",
+      likes: "44",
+      replies: "28",
+      href: "https://x.com/ox_tobiiii/status/2096931947817881644",
+    },
+    {
+      project: "ActionFi",
+      excerpt: "ActionFi x SIXR guide: $100K pool, $LAM farming, no empty like/follow tasks — real product usage.",
+      views: "1.7K",
+      likes: "47",
+      replies: "37",
+      href: "https://x.com/ox_tobiiii/status/2095693778971664391",
+    },
+  ],
+  statsNote: "Last 7 days · from X Analytics",
+  stats: [
+    {
+      label: "Followers",
+      value: 15400,
+      format: "compact" as const,
+      note: "12.2K verified",
+    },
+    {
+      label: "Impressions",
+      value: 181000,
+      format: "compact" as const,
+      note: "+178%",
+      tone: "up" as const,
+    },
+    {
+      label: "Engagements",
+      value: 12900,
+      format: "compact" as const,
+      note: "+105%",
+      tone: "up" as const,
+    },
+    {
+      label: "Engagement rate",
+      value: 7.1,
+      format: "percent" as const,
+      note: "Last 7 days",
+    },
+  ],
+  ecosystems: [
+    "Arbitrum",
+    "Aptos",
+    "Sui",
+    "LayerZero",
+    "zkSync",
+    "Linea",
+    "Berachain",
+    "Monad",
+    "RedStone",
+    "Ethereum",
+    "Solana",
+    "Base",
+  ],
+  contactRoles: [
+    "Ambassador",
+    "KOL",
+    "Community Manager",
+    "Content Creator",
+    "Web3 Intern",
+    "Collaboration",
+  ] as const,
+  formspree: "https://formspree.io/f/xxxxxxxx", // EDIT THIS
+  wallet: "Add ENS / wallet", // EDIT THIS
+  mediaKit: "/media-kit.pdf", // EDIT THIS
 } as const;
 
 export type HireRole = (typeof SITE.hireRoles)[number];
 
 export const DEFAULT_FEATURED = [
   { id: "x", label: "View X Profile", href: SITE.contact.x.href, external: true },
-  { id: "work", label: "Explore My Work", href: "#work", external: false },
+  { id: "work", label: "Explore My Work", href: "#proof", external: false },
 ];

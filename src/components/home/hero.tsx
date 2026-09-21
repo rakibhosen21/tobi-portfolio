@@ -1,10 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import { useHire } from "@/components/hire-modal";
 import { SITE } from "@/lib/site-config";
 import { xProfileUrl } from "@/lib/format";
 
 export function Hero() {
-  const { show } = useHire();
   const xHref = xProfileUrl(SITE.handle);
 
   return (
@@ -34,26 +32,26 @@ export function Hero() {
           <p className="mt-6 whitespace-pre-line text-[15px] leading-relaxed text-muted">{SITE.heroBody}</p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={show}
-              className="glow-ring flex h-12 items-center justify-center rounded-xl bg-fg px-5 text-sm font-semibold text-bg"
+            <a
+              href="#contact"
+              className="glow-ring flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-semibold text-bg"
             >
               Message Me
-            </button>
+            </a>
             <a
               href={xHref}
               target="_blank"
               rel="noreferrer"
-              className="glow-ring group flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-sm font-medium"
+              className="glow-ring group flex h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium"
             >
               View X Profile
               <ArrowUpRight className="size-4 text-muted transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <a href="#work" className="glow-ring flex h-12 items-center justify-center rounded-xl px-5 text-sm font-medium">
+            <a href="#proof" className="glow-ring flex h-12 items-center justify-center rounded-full px-5 text-sm font-medium">
               Explore My Work
             </a>
           </div>
+          <p className="mt-4 text-xs leading-relaxed text-muted">{SITE.heroCredLine}</p>
         </div>
       </div>
     </section>

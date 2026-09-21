@@ -22,6 +22,8 @@
   --color-violet-glow: rgb(139 124 255 / 0.16);
   --color-danger: #f0a8a8;
   --color-ok: #8ee0b8;
+  --color-ember: #e8784a;
+  --color-ember-glow: rgb(232 120 74 / 0.28);
 
   --radius-xs: 4px;
   --radius-sm: 8px;
@@ -49,6 +51,8 @@ html.dark {
   --color-violet-glow: rgb(139 124 255 / 0.16);
   --color-danger: #f0a8a8;
   --color-ok: #8ee0b8;
+  --color-ember: #e8784a;
+  --color-ember-glow: rgb(232 120 74 / 0.28);
   --shadow-border: 0 0 0 1px rgb(243 243 247 / 0.08);
   --shadow-border-hover: 0 0 0 1px rgb(126 224 214 / 0.35), 0 0 28px rgb(126 224 214 / 0.12);
   color-scheme: dark;
@@ -69,6 +73,8 @@ html.light {
   --color-violet-glow: rgb(99 90 180 / 0.1);
   --color-danger: #9f3a3a;
   --color-ok: #1f7a4d;
+  --color-ember: #c45c32;
+  --color-ember-glow: rgb(196 92 50 / 0.18);
   --shadow-border: 0 0 0 1px rgb(20 20 24 / 0.08), 0 1px 2px rgb(20 20 24 / 0.04);
   --shadow-border-hover: 0 0 0 1px rgb(15 118 110 / 0.35), 0 8px 24px rgb(15 118 110 / 0.1);
   color-scheme: light;
@@ -262,6 +268,117 @@ html.light {
   }
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal.is-in {
+  animation: fade-up 400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fight-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fight-media,
+.fight-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 18%;
+  transform: translateY(var(--fight-parallax, 0px)) scale(1.08);
+}
+
+.fight-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--color-bg) 82%, transparent) 0%,
+      color-mix(in oklab, var(--color-bg) 55%, transparent) 48%,
+      color-mix(in oklab, var(--color-bg) 28%, transparent) 100%
+    ),
+    linear-gradient(180deg, color-mix(in oklab, var(--color-bg) 30%, transparent), color-mix(in oklab, var(--color-bg) 62%, transparent));
+}
+
+.gold-ring {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-ember) 55%, var(--color-accent) 20%),
+    0 0 28px var(--color-ember-glow);
+}
+
+.proof-scroller {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.proof-scroller > * {
+  scroll-snap-align: start;
+  flex: 0 0 min(86vw, 22rem);
+}
+
+@media (min-width: 768px) {
+  .proof-scroller {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .proof-scroller > * {
+    flex: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .proof-scroller {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: marquee-slide 36s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.text-accent-grad {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dim));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -269,8 +386,15 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .bg-grid,
   .anime-particles span,
-  .anime-figure {
+  .anime-figure,
+  .fight-media,
+  .marquee-track,
+  .reveal,
+  .stagger-item {
     animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 
   *,
