@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { HireButton } from "@/components/hire-modal";
 import { SITE } from "@/lib/site-config";
 import { xProfileUrl } from "@/lib/format";
 
@@ -7,7 +8,7 @@ export function Hero() {
 
   return (
     <section id="top" className="relative px-4 pt-10 pb-20 sm:px-6 sm:pt-16 sm:pb-28">
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+      <div className="relative mx-auto max-w-6xl">
         <div className="max-w-xl">
           <div className="flex items-center gap-4">
             <div className="avatar-glow size-[4.5rem] overflow-hidden rounded-full sm:size-24">
@@ -30,14 +31,10 @@ export function Hero() {
           <p className="mt-3 text-lg font-medium text-fg sm:text-xl">{SITE.headline}</p>
           <p className="mt-3 text-sm text-muted">{SITE.identities.join(" · ")}</p>
           <p className="mt-6 whitespace-pre-line text-[15px] leading-relaxed text-muted">{SITE.heroBody}</p>
+          <p className="mt-3 text-xs leading-relaxed text-muted">{SITE.heroCredLine}</p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#contact"
-              className="glow-ring flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-semibold text-bg"
-            >
-              Message Me
-            </a>
+            <HireButton className="h-12 px-5" />
             <a
               href={xHref}
               target="_blank"
@@ -48,10 +45,9 @@ export function Hero() {
               <ArrowUpRight className="size-4 text-muted transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a href="#proof" className="glow-ring flex h-12 items-center justify-center rounded-full px-5 text-sm font-medium">
-              Explore My Work
+              Proof of Work
             </a>
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-muted">{SITE.heroCredLine}</p>
         </div>
       </div>
     </section>

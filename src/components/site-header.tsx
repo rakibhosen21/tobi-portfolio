@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { HireButton } from "@/components/hire-modal";
@@ -6,8 +5,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#work", label: "Work" },
+  { href: "#services", label: "Work" },
   { href: "#proof", label: "Proof" },
   { href: "#contact", label: "Contact" },
 ];
@@ -34,9 +32,6 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-2">
           <HireButton className="hidden sm:inline-flex h-9 px-3 text-sm" />
-          <Link to="/admin" className="hidden text-sm text-subtle hover:text-fg sm:inline">
-            Admin
-          </Link>
           <ThemeToggle />
           <button
             type="button"
@@ -61,11 +56,8 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <div className="mt-2 flex items-center gap-2">
-              <HireButton className="flex-1" />
-              <Link to="/admin" className="px-3 text-sm text-subtle" onClick={() => setOpen(false)}>
-                Admin
-              </Link>
+            <div className="mt-2">
+              <HireButton className="w-full" />
             </div>
           </nav>
         </div>

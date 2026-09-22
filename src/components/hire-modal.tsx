@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Check, Copy, Mail, X } from "lucide-react";
-import { submitContact } from "@/lib/api";
+import { sendHireMessage } from "@/lib/send-message";
 import { SITE } from "@/lib/site-config";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -60,15 +60,13 @@ function HireModal({ onClose }: { onClose: () => void }) {
     setBusy(true);
     setError(null);
     try {
-      await submitContact({
-        data: {
-          name: String(form.get("name") ?? ""),
-          email: String(form.get("email") ?? ""),
-          company: String(form.get("company") ?? ""),
-          role: String(form.get("role") ?? ""),
-          message: String(form.get("message") ?? ""),
-          website: String(form.get("website") ?? ""),
-        },
+      await sendHireMessage({
+        name: String(form.get("name") ?? ""),
+        email: String(form.get("email") ?? ""),
+        company: String(form.get("company") ?? ""),
+        role: String(form.get("role") ?? ""),
+        message: String(form.get("message") ?? ""),
+        website: String(form.get("website") ?? ""),
       });
       setDone(true);
     } catch (err) {
@@ -92,6 +90,7 @@ function HireModal({ onClose }: { onClose: () => void }) {
           <div>
             <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">HIRE ME</p>
             <h2 className="mt-1 font-display text-2xl font-semibold">Let's work together</h2>
+            <p className="mt-1 text-xs text-muted">Goes to {SITE.contact.email.handle}</p>
           </div>
           <button type="button" onClick={onClose} className="grid size-9 place-items-center rounded-lg text-muted hover:text-fg" aria-label="Close">
             <X className="size-4" />
@@ -99,7 +98,7 @@ function HireModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {done ? (
-          <p className="mt-6 text-sm text-muted">Message received. I'll get back to you.</p>
+          <p className="mt-6 text-sm text-muted">Sent. I'll reply to your email.</p>
         ) : (
           <form className="mt-5 grid gap-3" onSubmit={onSubmit}>
             <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
@@ -127,7 +126,7 @@ function HireModal({ onClose }: { onClose: () => void }) {
             </label>
             <label className="grid gap-1.5">
               <Label htmlFor="hire-message">Message</Label>
-              <Textarea id="hire-message" name="message" required minLength={10} rows={4} placeholder="What are you building?" />
+              <Textarea id="hire-message" name="message" required minLength={10} rows={4} placeholder="Role, timeline, and what you need." />
             </label>
             {error && <p className="text-sm text-danger">{error}</p>}
             <Button type="submit" disabled={busy}>

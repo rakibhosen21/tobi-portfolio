@@ -7,12 +7,10 @@ import { Ecosystems } from "@/components/home/ecosystems";
 import { Hero } from "@/components/home/hero";
 import { HireBand } from "@/components/home/hire";
 import { Partnerships } from "@/components/home/partnerships";
-import { Projects } from "@/components/home/projects";
 import { Proof } from "@/components/home/proof";
 import { Services } from "@/components/home/services";
 import { Stats } from "@/components/home/stats";
 import { LookingFor } from "@/components/home/status";
-import { Journey } from "@/components/home/timeline";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -33,14 +31,12 @@ function Home() {
           <main>
             <Hero />
             <About />
-            <Services />
-            <LookingFor />
             <Partnerships />
             <Proof />
             <Stats />
+            <Services />
+            <LookingFor />
             <Ecosystems />
-            <Projects />
-            <Journey />
             <HireBand />
             <Contact />
           </main>

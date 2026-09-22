@@ -1,15 +1,15 @@
-import { PenLine, Users, GraduationCap, Handshake, Megaphone, Sparkles } from "lucide-react";
+import { PenLine, Users, Megaphone, GraduationCap } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 
-const icons = [PenLine, Users, GraduationCap, Handshake, Megaphone, Sparkles];
+const icons = [PenLine, Users, Megaphone, GraduationCap];
 
 export function Services() {
   return (
     <section id="services" className="px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">WORK</p>
-        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">What I Can Do</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">What I Do</h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {SITE.services.map((card, i) => {
             const Icon = icons[i] ?? PenLine;
             return (
