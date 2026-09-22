@@ -1,7 +1,15 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export function Reveal({ children, className }: { children: ReactNode; className?: string }) {
+export function Reveal({
+  children,
+  className,
+  variant = "up",
+}: {
+  children: ReactNode;
+  className?: string;
+  variant?: "up" | "3d";
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,7 +33,7 @@ export function Reveal({ children, className }: { children: ReactNode; className
   }, []);
 
   return (
-    <div ref={ref} className={cn("reveal", className)}>
+    <div ref={ref} className={cn(variant === "3d" ? "reveal-3d" : "reveal", className)}>
       {children}
     </div>
   );

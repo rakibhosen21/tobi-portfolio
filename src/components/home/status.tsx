@@ -2,7 +2,7 @@ import { SITE } from "@/lib/site-config";
 
 export function LookingFor() {
   return (
-    <section id="status" className="px-4 py-16 sm:px-6">
+    <section id="status" className="section-3d px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>

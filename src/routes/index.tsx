@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { DepthLayer } from "@/components/depth-layer";
 import { FightBackground } from "@/components/fight-bg";
 import { HireProvider } from "@/components/hire-modal";
 import { About } from "@/components/home/about";
@@ -23,6 +24,7 @@ function Home() {
     <HireProvider>
       <div className="relative min-h-dvh overflow-x-hidden">
         <FightBackground />
+        <DepthLayer />
         <div className="pointer-events-none absolute inset-0 z-[1] bg-aurora" />
         <div className="pointer-events-none absolute inset-0 z-[1] bg-grid" />
         <div className="noise-overlay pointer-events-none absolute inset-0 z-[1]" />

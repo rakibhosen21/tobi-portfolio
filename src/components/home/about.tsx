@@ -2,7 +2,7 @@ import { SITE } from "@/lib/site-config";
 
 export function About() {
   return (
-    <section id="about" className="px-4 py-16 sm:px-6 sm:py-20">
+    <section id="about" className="section-3d px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">PROFILE</p>

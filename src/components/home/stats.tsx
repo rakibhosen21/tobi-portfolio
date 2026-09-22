@@ -13,7 +13,7 @@ function formatStat(value: number, format: "compact" | "percent") {
 
 export function Stats() {
   return (
-    <section id="numbers" className="px-4 py-12 sm:px-6 sm:py-16">
+    <section id="numbers" className="section-3d px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">NUMBERS</p>
@@ -22,7 +22,7 @@ export function Stats() {
         </Reveal>
         <div className="mt-6 grid grid-cols-2 gap-3">
           {SITE.stats.map((stat) => (
-            <Reveal key={stat.label}>
+            <Reveal key={stat.label} variant="3d">
               <article className="glass-card rounded-xl px-4 py-5">
                 <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">{stat.label}</p>
                 <CountUp value={stat.value} format={stat.format} />
@@ -48,6 +48,7 @@ function CountUp({ value, format }: { value: number; format: "compact" | "percen
   const ref = useRef<HTMLParagraphElement>(null);
   const [shown, setShown] = useState(0);
   const [play, setPlay] = useState(false);
+  const [pop, setPop] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -73,19 +74,23 @@ function CountUp({ value, format }: { value: number; format: "compact" | "percen
       return;
     }
     const start = performance.now();
-    const dur = 900;
+    const dur = 1100;
     let raf = 0;
     const tick = (now: number) => {
       const p = Math.min((now - start) / dur, 1);
       setShown(value * (1 - Math.pow(1 - p, 3)));
       if (p < 1) raf = requestAnimationFrame(tick);
+      else setPop(true);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [play, value]);
 
   return (
-    <p ref={ref} className="mt-2 font-display text-3xl font-semibold tracking-tight tabular-nums">
+    <p
+      ref={ref}
+      className={`mt-2 font-display text-3xl font-semibold tracking-tight tabular-nums ${pop ? "stat-pop" : ""}`}
+    >
       {formatStat(shown, format)}
     </p>
   );

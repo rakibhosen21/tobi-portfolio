@@ -5,7 +5,7 @@ const icons = [PenLine, Users, Megaphone, GraduationCap];
 
 export function Services() {
   return (
-    <section id="services" className="px-4 py-16 sm:px-6 sm:py-20">
+    <section id="services" className="section-3d px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">WORK</p>
         <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">What I Do</h2>

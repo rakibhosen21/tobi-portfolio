@@ -1,4 +1,4 @@
-import { Check, Copy, Mail } from "lucide-react";
+import { Check, Mail } from "lucide-react";
 import { useState } from "react";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
@@ -42,7 +42,7 @@ export function Contact() {
   ] as const;
 
   return (
-    <section id="contact" className="px-4 py-16 sm:px-6 sm:py-20">
+    <section id="contact" className="section-3d px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <div className="flex flex-wrap items-center gap-3">

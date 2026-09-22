@@ -1,25 +1,19 @@
+import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HireButton } from "@/components/hire-modal";
 import { SITE } from "@/lib/site-config";
 import { xProfileUrl } from "@/lib/format";
+import { usePointerTilt } from "@/lib/use-pointer-tilt";
 
 export function Hero() {
   const xHref = xProfileUrl(SITE.handle);
 
   return (
-    <section id="top" className="relative px-4 pt-10 pb-20 sm:px-6 sm:pt-16 sm:pb-28">
+    <section id="top" className="section-3d is-in relative px-4 pt-10 pb-20 sm:px-6 sm:pt-16 sm:pb-28">
       <div className="relative mx-auto max-w-6xl">
         <div className="max-w-xl">
           <div className="flex items-center gap-4">
-            <div className="avatar-glow size-[4.5rem] overflow-hidden rounded-full sm:size-24">
-              <img
-                src={SITE.avatar}
-                alt={`${SITE.name} avatar`}
-                width={192}
-                height={192}
-                className="size-full object-cover"
-              />
-            </div>
+            <TiltAvatar />
             <span className="inline-flex items-center gap-2 rounded-full bg-ok/10 px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-ok uppercase">
               <span className="size-1.5 rounded-full bg-ok" style={{ animation: "pulse-live 1.8s ease-in-out infinite" }} />
               {SITE.availability}
@@ -51,5 +45,23 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function TiltAvatar() {
+  const ref = useRef<HTMLDivElement>(null);
+  usePointerTilt(ref, 12);
+  return (
+    <div ref={ref} className="avatar-stage">
+      <div className="avatar-glow avatar-3d size-[4.5rem] overflow-hidden rounded-full sm:size-24">
+        <img
+          src={SITE.avatar}
+          alt={`${SITE.name} avatar`}
+          width={192}
+          height={192}
+          className="size-full object-cover"
+        />
+      </div>
+    </div>
   );
 }
