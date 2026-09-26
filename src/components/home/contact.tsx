@@ -65,7 +65,7 @@ export function Contact() {
 
         <div className="mt-6 flex flex-col gap-2 sm:max-w-xl">
           <a href="/hire" className="inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
-            Hire me on Telegram
+            Hire me
           </a>
           <a href={SITE.contact.x.href} target="_blank" rel="noreferrer" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
             DM on X
