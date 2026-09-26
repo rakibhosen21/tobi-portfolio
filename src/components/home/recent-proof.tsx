@@ -20,7 +20,7 @@ export function RecentProof() {
                 key={item.id}
                 type="button"
                 onClick={() => setRange(item.id)}
-                className={`h-8 rounded-full px-3 text-xs ${range === item.id ? "bg-fg text-bg" : "text-muted"}`}
+                className={`h-11 rounded-full px-4 text-sm ${range === item.id ? "bg-fg text-bg" : "text-muted"}`}
               >
                 {item.label}
               </button>

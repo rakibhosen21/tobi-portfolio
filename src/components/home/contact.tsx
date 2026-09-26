@@ -17,7 +17,7 @@ export function Contact() {
           Telegram is the fastest reply. X opens my profile. Email is for a longer brief. YouTube is the channel.
           Discord has no public page, so that icon copies the username {SITE.contact.discord.handle}.
         </p>
-        <a href="/hire" className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
+        <a href="/hire" className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg sm:w-auto">
           Hire me
         </a>
       </div>

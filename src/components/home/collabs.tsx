@@ -27,7 +27,7 @@ export function Collabs() {
         </ul>
         <p className="mt-6 text-sm text-muted">Interested in working together?</p>
         <a href="/hire" className="mt-3 inline-flex h-11 items-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
-          Work With Me
+          Hire me
         </a>
       </div>
     </section>

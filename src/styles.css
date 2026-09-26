@@ -13,7 +13,7 @@
   --color-elevated: #17171f;
   --color-fg: #f3f3f7;
   --color-muted: #8d8d98;
-  --color-subtle: #6a6a75;
+  --color-subtle: #a1a1ab;
   --color-border: rgb(243 243 247 / 0.1);
   --color-border-strong: rgb(243 243 247 / 0.18);
   --color-accent: #7ee0d6;
@@ -42,7 +42,7 @@ html.dark {
   --color-elevated: #17171f;
   --color-fg: #f3f3f7;
   --color-muted: #8d8d98;
-  --color-subtle: #6a6a75;
+  --color-subtle: #a1a1ab;
   --color-border: rgb(243 243 247 / 0.1);
   --color-border-strong: rgb(243 243 247 / 0.18);
   --color-accent: #7ee0d6;
@@ -98,6 +98,12 @@ html.light {
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
   }
 
   h1,

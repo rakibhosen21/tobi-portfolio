@@ -32,7 +32,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <KitLink className="hidden sm:inline-flex" />
           <a href="/hire" className="hidden h-9 items-center rounded-full bg-fg px-3 text-sm font-medium text-bg sm:inline-flex">
-            Work With Me
+            Hire me
           </a>
           <button
             type="button"
@@ -60,7 +60,7 @@ export function SiteHeader() {
             <div className="mt-2 flex flex-col gap-2">
               <KitLink className="justify-center" />
               <a href="/hire" onClick={() => setOpen(false)} className="inline-flex h-11 items-center justify-center rounded-full bg-fg text-sm font-medium text-bg">
-                Work With Me
+                Hire me
               </a>
             </div>
           </nav>
