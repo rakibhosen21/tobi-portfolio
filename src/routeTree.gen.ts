@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PageRouteImport } from './routes/$page'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as HireRouteImport } from './routes/hire'
+import { Route as KitRouteImport } from './routes/kit'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PostsRouteImport } from './routes/posts'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -29,6 +31,16 @@ const PageRoute = PageRouteImport.update({
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HireRoute = HireRouteImport.update({
+  id: '/hire',
+  path: '/hire',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitRoute = KitRouteImport.update({
+  id: '/kit',
+  path: '/kit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -51,6 +63,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$page': typeof PageRoute
   '/admin': typeof AdminRoute
+  '/hire': typeof HireRoute
+  '/kit': typeof KitRoute
   '/login': typeof LoginRoute
   '/posts': typeof PostsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -59,6 +73,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$page': typeof PageRoute
   '/admin': typeof AdminRoute
+  '/hire': typeof HireRoute
+  '/kit': typeof KitRoute
   '/login': typeof LoginRoute
   '/posts': typeof PostsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -68,23 +84,51 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$page': typeof PageRoute
   '/admin': typeof AdminRoute
+  '/hire': typeof HireRoute
+  '/kit': typeof KitRoute
   '/login': typeof LoginRoute
   '/posts': typeof PostsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$page' | '/admin' | '/login' | '/posts' | '/api/auth/$'
+  fullPaths:
+    | '/'
+    | '/$page'
+    | '/admin'
+    | '/hire'
+    | '/kit'
+    | '/login'
+    | '/posts'
+    | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$page' | '/admin' | '/login' | '/posts' | '/api/auth/$'
+  to:
+    | '/'
+    | '/$page'
+    | '/admin'
+    | '/hire'
+    | '/kit'
+    | '/login'
+    | '/posts'
+    | '/api/auth/$'
   id:
-    '__root__' | '/' | '/$page' | '/admin' | '/login' | '/posts' | '/api/auth/$'
+    | '__root__'
+    | '/'
+    | '/$page'
+    | '/admin'
+    | '/hire'
+    | '/kit'
+    | '/login'
+    | '/posts'
+    | '/api/auth/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PageRoute: typeof PageRoute
   AdminRoute: typeof AdminRoute
+  HireRoute: typeof HireRoute
+  KitRoute: typeof KitRoute
   LoginRoute: typeof LoginRoute
   PostsRoute: typeof PostsRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
@@ -111,6 +155,20 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hire': {
+      id: '/hire'
+      path: '/hire'
+      fullPath: '/hire'
+      preLoaderRoute: typeof HireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kit': {
+      id: '/kit'
+      path: '/kit'
+      fullPath: '/kit'
+      preLoaderRoute: typeof KitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -141,6 +199,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PageRoute: PageRoute,
   AdminRoute: AdminRoute,
+  HireRoute: HireRoute,
+  KitRoute: KitRoute,
   LoginRoute: LoginRoute,
   PostsRoute: PostsRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,

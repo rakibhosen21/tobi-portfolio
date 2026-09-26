@@ -4,8 +4,6 @@ import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SITE } from "@/lib/site-config";
 import appCss from "../styles.css?url";
 
-const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem("tobi-theme");var r=document.documentElement;if(t==="light"){r.classList.remove("dark");r.classList.add("light")}else{r.classList.add("dark");r.classList.remove("light")}}catch(e){}})();`;
-
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -36,7 +34,6 @@ export const Route = createRootRoute({
         <HeadContent />
       </head>
       <body className="min-h-dvh bg-bg text-fg">
-        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <PreviewHostBridge />
         <AuthProvider>
           <Outlet />

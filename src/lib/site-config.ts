@@ -183,7 +183,7 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
     },
     {
       q: "How can I request the media kit?",
-      a: "Email oxtobiiii@gmail.com with the subject Media Kit, or hit Request Media Kit on this page.",
+      a: "Open the Media Kit page on this site, or email oxtobiiii@gmail.com.",
     },
     {
       q: "How can I contact Tobi?",

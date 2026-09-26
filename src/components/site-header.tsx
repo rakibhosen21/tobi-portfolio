@@ -1,7 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { KitLink } from "@/components/kit-link";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -34,10 +33,9 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-2">
           <KitLink className="hidden sm:inline-flex" />
-          <a href="#contact" className="hidden h-9 items-center rounded-full bg-fg px-3 text-sm font-medium text-bg sm:inline-flex">
+          <a href="/hire" className="hidden h-9 items-center rounded-full bg-fg px-3 text-sm font-medium text-bg sm:inline-flex">
             Work With Me
           </a>
-          <ThemeToggle />
           <button
             type="button"
             className="grid size-10 place-items-center rounded-lg text-fg lg:hidden"
@@ -63,7 +61,7 @@ export function SiteHeader() {
             ))}
             <div className="mt-2 flex flex-col gap-2">
               <KitLink className="justify-center" />
-              <a href="#contact" onClick={() => setOpen(false)} className="inline-flex h-11 items-center justify-center rounded-full bg-fg text-sm font-medium text-bg">
+              <a href="/hire" onClick={() => setOpen(false)} className="inline-flex h-11 items-center justify-center rounded-full bg-fg text-sm font-medium text-bg">
                 Work With Me
               </a>
             </div>

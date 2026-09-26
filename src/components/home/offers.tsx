@@ -1,7 +1,5 @@
 import { SITE } from "@/lib/site-config";
 
-const kitMail = `mailto:${SITE.contact.email.handle}?subject=Media%20Kit%20Request`;
-
 export function Offers() {
   return (
     <section id="services" className="px-4 py-16 sm:px-6">
@@ -18,11 +16,11 @@ export function Offers() {
           ))}
         </ul>
         <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-          <a href={kitMail} className="inline-flex h-11 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
-            Request My Media Kit
+          <a href="/kit" className="inline-flex h-11 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
+            View Media Kit
           </a>
-          <a href="#contact" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
-            Contact Me
+          <a href="/hire" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
+            Hire me
           </a>
         </div>
       </div>

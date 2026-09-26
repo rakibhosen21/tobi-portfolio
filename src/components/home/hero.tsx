@@ -13,14 +13,14 @@ export function Hero() {
             height={160}
             className="size-20 shrink-0 rounded-full object-cover shadow-[var(--shadow-border)] sm:size-28"
           />
-          <p className="text-[11px] font-semibold tracking-[0.22em] text-accent">@{SITE.handle}</p>
+          <p className="font-display text-xl font-semibold tracking-tight">Tobi</p>
         </div>
         <h1 className="mt-5 max-w-xl font-display text-4xl font-semibold tracking-tight sm:text-6xl">
             {SITE.headline}
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">{SITE.heroSub}</p>
           <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-            <a href="#contact" className="inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
+            <a href="/hire" className="inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
               Work With Me
             </a>
             <a href="#work" className="glow-ring inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-medium">

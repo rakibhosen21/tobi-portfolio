@@ -2,7 +2,6 @@ import { Check, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
-import { ContactForm } from "@/components/home/contact-form";
 import { SITE } from "@/lib/site-config";
 
 export function Contact() {
@@ -64,18 +63,17 @@ export function Contact() {
           <p className="mt-3 max-w-xl text-sm text-muted">Have a Web3 project, campaign or idea? Let's talk.</p>
         </Reveal>
 
-        <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-          <a href={SITE.contact.x.href} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
-            DM on X
+        <div className="mt-6 flex flex-col gap-2 sm:max-w-xl">
+          <a href="/hire" className="inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
+            Hire me on Telegram
           </a>
-          <a href={SITE.contact.telegram.href} target="_blank" rel="noreferrer" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
-            Telegram
+          <a href={SITE.contact.x.href} target="_blank" rel="noreferrer" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
+            DM on X
           </a>
           <a href={SITE.contact.email.href} className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
             Email Me
           </a>
         </div>
-        <ContactForm />
 
         <Reveal className="mt-8 grid gap-3 sm:grid-cols-2">
           {cards.map((card) => {

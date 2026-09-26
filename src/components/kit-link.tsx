@@ -1,8 +1,6 @@
-import { SITE } from "@/lib/site-config";
-
 export function KitLink({ className = "" }: { className?: string }) {
   return (
-    <a href={SITE.mediaKit} className={`kit-link ${className}`} download>
+    <a href="/kit" className={`kit-link ${className}`}>
       Media Kit
     </a>
   );
