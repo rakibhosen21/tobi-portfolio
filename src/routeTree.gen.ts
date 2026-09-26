@@ -15,6 +15,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as HireRouteImport } from './routes/hire'
 import { Route as KitRouteImport } from './routes/kit'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as NftRouteImport } from './routes/nft'
 import { Route as PostsRouteImport } from './routes/posts'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
@@ -48,6 +49,11 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NftRoute = NftRouteImport.update({
+  id: '/nft',
+  path: '/nft',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PostsRoute = PostsRouteImport.update({
   id: '/posts',
   path: '/posts',
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/hire': typeof HireRoute
   '/kit': typeof KitRoute
   '/login': typeof LoginRoute
+  '/nft': typeof NftRoute
   '/posts': typeof PostsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/hire': typeof HireRoute
   '/kit': typeof KitRoute
   '/login': typeof LoginRoute
+  '/nft': typeof NftRoute
   '/posts': typeof PostsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/hire': typeof HireRoute
   '/kit': typeof KitRoute
   '/login': typeof LoginRoute
+  '/nft': typeof NftRoute
   '/posts': typeof PostsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/hire'
     | '/kit'
     | '/login'
+    | '/nft'
     | '/posts'
     | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/hire'
     | '/kit'
     | '/login'
+    | '/nft'
     | '/posts'
     | '/api/auth/$'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/hire'
     | '/kit'
     | '/login'
+    | '/nft'
     | '/posts'
     | '/api/auth/$'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   HireRoute: typeof HireRoute
   KitRoute: typeof KitRoute
   LoginRoute: typeof LoginRoute
+  NftRoute: typeof NftRoute
   PostsRoute: typeof PostsRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nft': {
+      id: '/nft'
+      path: '/nft'
+      fullPath: '/nft'
+      preLoaderRoute: typeof NftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/posts': {
       id: '/posts'
       path: '/posts'
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   HireRoute: HireRoute,
   KitRoute: KitRoute,
   LoginRoute: LoginRoute,
+  NftRoute: NftRoute,
   PostsRoute: PostsRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }

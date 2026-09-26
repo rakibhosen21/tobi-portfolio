@@ -338,6 +338,21 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       href: "https://x.com/ox_tobiiii/status/2096076254135128066",
     },
   ],
+  nftGiveaways: [
+    { project: "Fomoki", spots: "5 mint spots", date: "26 Sep 2026", href: "https://x.com/ox_tobiiii/status/2103684868521742677" },
+    { project: "Zecfrogs", spots: "10x GTD", date: "21 Sep 2026", href: "https://x.com/ox_tobiiii/status/2101887065269137818" },
+    { project: "Zeckers", spots: "5x GTD", date: "19 Sep 2026", href: "https://x.com/ox_tobiiii/status/2101222847431794997" },
+    { project: "Zecfrogs", spots: "10x GTD", date: "18 Sep 2026", href: "https://x.com/ox_tobiiii/status/2100970019459060056" },
+    { project: "Bunny WTF", spots: "20x GTD", date: "17 Sep 2026", href: "https://x.com/ox_tobiiii/status/2100588855414129060" },
+    { project: "Obsession", spots: "5x GTD", date: "17 Sep 2026", href: "https://x.com/ox_tobiiii/status/2100489931550495212" },
+    { project: "Arc Tellers", spots: "3 GTD + 10 FCFS", date: "16 Sep 2026", href: "https://x.com/ox_tobiiii/status/2100150246835933187" },
+    { project: "Hizumi, Kashed, Turtz", spots: "8 / 20 / 10 GTD", date: "16 Sep 2026", href: "https://x.com/ox_tobiiii/status/2100120623792247079" },
+    { project: "Hazels", spots: "5x WL", date: "16 Sep 2026", href: "https://x.com/ox_tobiiii/status/2100103430975144360" },
+    { project: "Arc Cat", spots: "10 GTD", date: "15 Sep 2026", href: "https://x.com/ox_tobiiii/status/2099734535160426664" },
+    { project: "Imprint", spots: "1x GTD", date: "10 Sep 2026", href: "https://x.com/ox_tobiiii/status/2098087967499964540" },
+    { project: "SexyHood", spots: "3 GTD", date: "1 Sep 2026", href: "https://x.com/ox_tobiiii/status/2094667439611302291" },
+    { project: "Proof of Pixels", spots: "5 GTD", date: "27 Aug 2026", href: "https://x.com/ox_tobiiii/status/2092887973599584555" },
+  ],
   proof: [
     {
       project: "Action Model",
