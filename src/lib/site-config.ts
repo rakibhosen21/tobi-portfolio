@@ -21,11 +21,11 @@ I spend my time researching projects, creating content, testing products and tal
 
 Projects come to me for content, promotion, KOL campaigns, threads, video and Spaces.`,
   creatorStats: [
-    { value: "8K+", label: "X followers" },
-    { value: "XXK+", label: "Content impressions" },
-    { value: "XX+", label: "Posts / replies" },
-    { value: "Since 2021", label: "In Web3" },
-    { value: "3", label: "Active partnerships" },
+    { value: "17.3K", label: "X followers" },
+    { value: "13.8K", label: "Verified followers" },
+    { value: "1M", label: "Impressions" },
+    { value: "53.8K", label: "Engagements" },
+    { value: "4.9%", label: "Engagement rate" },
   ],
   contact: {
     x: {
@@ -379,12 +379,16 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       href: "https://x.com/ox_tobiiii/status/2095693778971664391",
     },
   ],
-  statsNote: "Last 7 days · X Analytics",
+  statsNote: "X Analytics",
   stats: [
-    { label: "Followers", value: 15400, format: "compact" as const, note: "12.2K verified" },
-    { label: "Impressions", value: 181000, format: "compact" as const, note: "+178%", tone: "up" as const },
-    { label: "Engagements", value: 12900, format: "compact" as const, note: "+105%", tone: "up" as const },
-    { label: "Engagement rate", value: 7.1, format: "percent" as const, note: "Last 7 days" },
+    { label: "Followers", value: 17300, format: "compact" as const, note: "13.8K verified · 14.6K active" },
+    { label: "Impressions", value: 1000000, format: "compact" as const },
+    { label: "Engagements", value: 53800, format: "compact" as const },
+    { label: "Engagement rate", value: 4.9, format: "percent" as const },
+    { label: "Replies", value: 15700, format: "compact" as const },
+    { label: "Likes", value: 27200, format: "compact" as const },
+    { label: "Profile visits", value: 8700, format: "compact" as const },
+    { label: "Reposts", value: 1700, format: "compact" as const },
   ],
   ecosystems: [
     { name: "Ethereum", logo: "/assets/eco/ethereum.svg" },

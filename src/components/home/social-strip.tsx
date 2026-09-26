@@ -1,7 +1,7 @@
 import { SITE } from "@/lib/site-config";
 
 const items = [
-  { label: "X", href: SITE.contact.x.href, count: "15.4K" },
+  { label: "X", href: SITE.contact.x.href, count: "17.3K" },
   { label: "Telegram", href: SITE.contact.telegram.href, count: null },
   { label: "YouTube", href: SITE.contact.youtube.href, count: null },
   ...(SITE.onchain.farcaster

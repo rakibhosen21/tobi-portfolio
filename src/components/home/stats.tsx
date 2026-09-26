@@ -4,6 +4,10 @@ import { SITE } from "@/lib/site-config";
 
 function formatStat(value: number, format: "compact" | "percent") {
   if (format === "percent") return `${value.toFixed(1)}%`;
+  if (value >= 1000000) {
+    const m = value / 1000000;
+    return `${Number.isInteger(m) ? m.toFixed(0) : m.toFixed(1)}M`;
+  }
   if (value >= 1000) {
     const k = value / 1000;
     return `${k >= 10 || Number.isInteger(k) ? k.toFixed(0) : k.toFixed(1)}K`;
