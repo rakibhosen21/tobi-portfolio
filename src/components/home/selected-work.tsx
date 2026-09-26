@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { NftCollabs } from "@/components/nft-collabs";
 import { SITE } from "@/lib/site-config";
 
 const filters = ["All", "Web3", "AI", "NFT", "DeFi"] as const;
@@ -26,26 +27,12 @@ export function SelectedWork() {
           ))}
         </div>
         {filter === "NFT" ? (
-          <ul className="mt-6 grid gap-2">
-            {SITE.nftGiveaways.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="glass-card flex items-center justify-between gap-3 rounded-xl px-4 py-3"
-                >
-                  <span>
-                    <span className="block text-sm font-medium">{item.project}</span>
-                    <span className="block text-xs text-muted">
-                      {item.spots} · {item.date}
-                    </span>
-                  </span>
-                  <ArrowUpRight className="size-4 shrink-0 text-subtle" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-6">
+            <h3 className="font-display text-xl">NFTs I collab with</h3>
+            <div className="mt-4">
+              <NftCollabs />
+            </div>
+          </div>
         ) : items.length === 0 ? (
           <p className="mt-6 text-sm text-muted">Nothing in {filter} yet.</p>
         ) : (
