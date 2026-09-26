@@ -1,81 +1,127 @@
 import { useEffect, useRef } from "react";
 
-/** Slow node field. Lighter than a photo backdrop, pauses for reduced motion. */
+/** Abstract anime atmosphere. Lights, waves and a few sparks. No characters. */
 export function FieldBackground() {
-  const ref = useRef<HTMLCanvasElement>(null);
+  const root = useRef<HTMLDivElement>(null);
+  const dust = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = ref.current;
-    if (!canvas) return;
+    const canvas = dust.current;
+    const stage = root.current;
+    if (!canvas || !stage) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const dots = Array.from({ length: 36 }, () => ({
+    const mobile = window.matchMedia("(max-width: 760px)").matches;
+    const fine = window.matchMedia("(pointer: fine)").matches;
+    const count = mobile ? 7 : 16;
+
+    type Spark = { x: number; y: number; r: number; vy: number; a: number; violet: boolean };
+    const sparks: Spark[] = Array.from({ length: count }, () => ({
       x: Math.random(),
       y: Math.random(),
-      vx: (Math.random() - 0.5) * 0.00012,
-      vy: (Math.random() - 0.5) * 0.00012,
+      r: Math.random() * 1.3 + 0.4,
+      vy: Math.random() * 0.00035 + 0.00012,
+      a: Math.random() * 0.35 + 0.12,
+      violet: Math.random() > 0.55,
     }));
-    let raf = 0;
+
     let w = 1;
     let h = 1;
+    let raf = 0;
+    let mx = 0;
+    let my = 0;
+    let tx = 0;
+    let ty = 0;
+    let flashTimer = 0;
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const dpr = Math.min(window.devicePixelRatio || 1, mobile ? 1 : 1.5);
       w = canvas.width = Math.floor(window.innerWidth * dpr);
       h = canvas.height = Math.floor(window.innerHeight * dpr);
     };
 
-    const frame = () => {
+    const paint = (moving: boolean) => {
       ctx.clearRect(0, 0, w, h);
-      const link = Math.min(w, h) * 0.16;
-      for (const d of dots) {
-        if (!reduce) {
-          d.x += d.vx;
-          d.y += d.vy;
-          if (d.x < 0 || d.x > 1) d.vx *= -1;
-          if (d.y < 0 || d.y > 1) d.vy *= -1;
-        }
-      }
-      ctx.lineWidth = 1;
-      for (let i = 0; i < dots.length; i++) {
-        const a = dots[i];
-        const ax = a.x * w;
-        const ay = a.y * h;
-        for (let j = i + 1; j < dots.length; j++) {
-          const b = dots[j];
-          const dx = ax - b.x * w;
-          const dy = ay - b.y * h;
-          const dist = Math.hypot(dx, dy);
-          if (dist < link) {
-            ctx.strokeStyle = `rgba(186, 245, 236, ${0.42 * (1 - dist / link)})`;
-            ctx.beginPath();
-            ctx.moveTo(ax, ay);
-            ctx.lineTo(b.x * w, b.y * h);
-            ctx.stroke();
+      for (const s of sparks) {
+        if (moving) {
+          s.y -= s.vy;
+          if (s.y < -0.02) {
+            s.y = 1.02;
+            s.x = Math.random();
           }
         }
-        ctx.fillStyle = "rgba(230, 255, 250, 0.9)";
+        const px = s.x * w;
+        const py = s.y * h;
+        ctx.fillStyle = s.violet ? `rgba(186, 150, 255, ${s.a})` : `rgba(150, 230, 230, ${s.a})`;
         ctx.beginPath();
-        ctx.arc(ax, ay, 1.4, 0, Math.PI * 2);
+        ctx.arc(px, py, s.r * (w / window.innerWidth), 0, Math.PI * 2);
         ctx.fill();
       }
-      if (!reduce) raf = requestAnimationFrame(frame);
+    };
+
+    const frame = () => {
+      if (fine) {
+        tx += (mx - tx) * 0.05;
+        ty += (my - ty) * 0.05;
+      }
+      const scroll = Math.min(window.scrollY, 900) * (mobile ? 0.012 : 0.02);
+      stage.style.setProperty("--mx", tx.toFixed(3));
+      stage.style.setProperty("--my", ty.toFixed(3));
+      stage.style.setProperty("--scroll", `${scroll.toFixed(1)}px`);
+      paint(true);
+      raf = requestAnimationFrame(frame);
+    };
+
+    const onMove = (e: PointerEvent) => {
+      mx = e.clientX / window.innerWidth - 0.5;
+      my = e.clientY / window.innerHeight - 0.5;
+    };
+
+    const pulse = () => {
+      stage.classList.add("is-flash");
+      window.setTimeout(() => stage.classList.remove("is-flash"), 480);
+      flashTimer = window.setTimeout(pulse, 18000 + Math.random() * 24000);
     };
 
     resize();
-    frame();
+    paint(false);
     window.addEventListener("resize", resize);
+
+    if (!reduce) {
+      if (fine) window.addEventListener("pointermove", onMove, { passive: true });
+      raf = requestAnimationFrame(frame);
+      flashTimer = window.setTimeout(pulse, 14000 + Math.random() * 8000);
+    }
+
     return () => {
       cancelAnimationFrame(raf);
+      window.clearTimeout(flashTimer);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", onMove);
     };
   }, []);
 
   return (
-    <>
-      <canvas ref={ref} className="field-bg" aria-hidden="true" />
-      <div className="light-wash" aria-hidden="true" />
-    </>
+    <div ref={root} className="aura" aria-hidden="true">
+      <div className="aura-layer aura-far">
+        <div className="aura-light aura-light-a" />
+        <div className="aura-light aura-light-b" />
+      </div>
+      <div className="aura-layer aura-mid">
+        <svg className="aura-wave" viewBox="0 0 1200 640" preserveAspectRatio="none">
+          <path d="M-40 340 C 180 220, 360 470, 620 330 S 980 180, 1280 300" />
+          <path d="M-40 420 C 220 520, 460 260, 720 400 S 1040 500, 1280 360" />
+        </svg>
+      </div>
+      <div className="aura-layer aura-near">
+        <span className="aura-streak s1" />
+        <span className="aura-streak s2" />
+        <span className="aura-streak s3" />
+        <canvas ref={dust} className="aura-dust" />
+      </div>
+      <div className="aura-flash" />
+    </div>
   );
 }

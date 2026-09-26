@@ -513,14 +513,198 @@ html {
   }
 }
 
-.field-bg {
+.field-bg,
+.aura {
   position: fixed;
   inset: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: #07070b;
   pointer-events: none;
+}
+
+.aura-layer {
+  position: absolute;
+  inset: -8%;
+  will-change: transform;
+}
+
+.aura-far {
+  transform: translate3d(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px - var(--scroll, 0px)), 0);
+}
+
+.aura-mid {
+  transform: translate3d(calc(var(--mx, 0) * -26px), calc(var(--my, 0) * -16px - var(--scroll, 0px) * 1.5), 0);
+}
+
+.aura-near {
+  transform: translate3d(calc(var(--mx, 0) * -40px), calc(var(--my, 0) * -22px - var(--scroll, 0px) * 2.2), 0);
+}
+
+.aura-light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(46px);
+  will-change: transform;
+}
+
+.aura-light-a {
+  width: 62vw;
+  height: 62vw;
+  left: -8%;
+  top: -12%;
+  background: radial-gradient(circle, rgb(92 58 168 / 0.42), transparent 68%);
+  animation: aura-drift-a 52s ease-in-out infinite alternate;
+}
+
+.aura-light-b {
+  width: 48vw;
+  height: 48vw;
+  right: -6%;
+  bottom: 8%;
+  background: radial-gradient(circle, rgb(40 120 140 / 0.28), transparent 70%);
+  animation: aura-drift-b 64s ease-in-out infinite alternate;
+}
+
+.aura-wave {
+  position: absolute;
+  inset: 8% -10%;
+  width: 120%;
+  height: 84%;
+  opacity: 0.55;
+}
+
+.aura-wave path {
+  fill: none;
+  stroke: rgb(168 140 255 / 0.22);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.aura-wave path:last-child {
+  stroke: rgb(120 210 210 / 0.16);
+  transform-origin: center;
+  animation: aura-wave 36s ease-in-out infinite alternate;
+}
+
+.aura-streak {
+  position: absolute;
+  height: 1px;
+  width: 22vw;
+  background: linear-gradient(90deg, transparent, rgb(210 230 255 / 0.7), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.aura-streak.s1 {
+  top: 22%;
+  left: -10%;
+  animation: aura-streak 14s ease-in-out infinite;
+}
+
+.aura-streak.s2 {
+  top: 58%;
+  left: -20%;
+  width: 16vw;
+  animation: aura-streak 18s ease-in-out 7s infinite;
+}
+
+.aura-streak.s3 {
+  top: 38%;
+  left: 10%;
+  width: 12vw;
+  animation: aura-streak 16s ease-in-out 11s infinite;
+}
+
+.aura-dust {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aura-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 42% 36%, rgb(210 220 255 / 0.16), transparent 46%);
+  opacity: 0;
+}
+
+.aura.is-flash .aura-flash {
+  animation: aura-pulse 480ms ease-out;
+}
+
+@keyframes aura-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(8%, 6%, 0) scale(1.08);
+  }
+}
+
+@keyframes aura-drift-b {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-7%, -5%, 0);
+  }
+}
+
+@keyframes aura-wave {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-3%, 2%, 0);
+  }
+}
+
+@keyframes aura-streak {
+  0%,
+  72% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-28deg);
+  }
+  80% {
+    opacity: 0.45;
+  }
+  92%,
+  100% {
+    opacity: 0;
+    transform: translate3d(70vw, -18vh, 0) rotate(-28deg);
+  }
+}
+
+@keyframes aura-pulse {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .aura-streak.s3 {
+    display: none;
+  }
+
+  .aura-light {
+    filter: blur(32px);
+    opacity: 0.8;
+  }
+
+  .aura-light-a,
+  .aura-light-b {
+    animation-duration: 70s;
+  }
 }
 
 .glass-board {
@@ -793,6 +977,10 @@ html {
   .portrait-float,
   .field-bg,
   .light-wash,
+  .aura-light,
+  .aura-wave path,
+  .aura-streak,
+  .aura-flash,
   .orbit-ring,
   .door-slot,
   .card-rise {
