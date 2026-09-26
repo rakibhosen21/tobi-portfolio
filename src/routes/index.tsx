@@ -28,10 +28,10 @@ function Home() {
           <main>
             <Hero />
             <About />
+            <Offers />
             <SelectedWork />
             <Collabs />
             <ContentReach />
-            <Offers />
             <Faq />
             <RecentProof />
             <Contact />
