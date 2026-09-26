@@ -1,4 +1,4 @@
-import { Check, Mail } from "lucide-react";
+import { Check, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
@@ -38,6 +38,14 @@ export function Contact() {
       cta: SITE.contact.email.cta,
       href: SITE.contact.email.href,
       icon: Mail,
+    },
+    {
+      key: "youtube",
+      label: SITE.contact.youtube.label,
+      handle: SITE.contact.youtube.handle,
+      cta: SITE.contact.youtube.cta,
+      href: SITE.contact.youtube.href,
+      icon: Youtube,
     },
   ] as const;
 

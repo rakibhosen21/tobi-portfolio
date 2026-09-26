@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DepthLayer } from "@/components/depth-layer";
-import { FightBackground } from "@/components/fight-bg";
+import { FieldBackground } from "@/components/field-bg";
 import { HireProvider } from "@/components/hire-modal";
 import { About } from "@/components/home/about";
 import { Contact } from "@/components/home/contact";
@@ -8,6 +8,7 @@ import { Ecosystems } from "@/components/home/ecosystems";
 import { Hero } from "@/components/home/hero";
 import { HireBand } from "@/components/home/hire";
 import { Partnerships } from "@/components/home/partnerships";
+import { Posts } from "@/components/home/posts";
 import { Proof } from "@/components/home/proof";
 import { Services } from "@/components/home/services";
 import { Stats } from "@/components/home/stats";
@@ -23,10 +24,8 @@ function Home() {
   return (
     <HireProvider>
       <div className="relative min-h-dvh overflow-x-hidden">
-        <FightBackground />
+        <FieldBackground />
         <DepthLayer />
-        <div className="pointer-events-none absolute inset-0 z-[1] bg-aurora" />
-        <div className="pointer-events-none absolute inset-0 z-[1] bg-grid" />
         <div className="noise-overlay pointer-events-none absolute inset-0 z-[1]" />
         <div className="relative z-10">
           <SiteHeader />
@@ -34,6 +33,7 @@ function Home() {
             <Hero />
             <About />
             <Partnerships />
+            <Posts />
             <Proof />
             <Stats />
             <Services />

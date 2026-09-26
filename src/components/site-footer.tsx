@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Youtube } from "lucide-react";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
 import { SITE } from "@/lib/site-config";
 
@@ -34,6 +34,15 @@ export function SiteFooter() {
           >
             <DiscordLogo className="size-4" />
           </button>
+          <a
+            href={SITE.contact.youtube.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="YouTube"
+            className="grid size-10 place-items-center rounded-full hover:text-fg"
+          >
+            <Youtube className="size-4" />
+          </a>
           <a href={SITE.contact.email.href} aria-label="Email" className="grid size-10 place-items-center rounded-full hover:text-fg">
             <Mail className="size-4" />
           </a>

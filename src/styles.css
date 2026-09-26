@@ -513,15 +513,63 @@ html {
   }
 }
 
-.section-3d {
-  transform: perspective(1200px) rotateX(5deg) scale(0.985);
-  transform-origin: 50% 12%;
-  opacity: 0.72;
-  transition:
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+.field-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: #07070b;
+  pointer-events: none;
 }
 
+.glass-board {
+  border-radius: 1.5rem;
+  background: color-mix(in oklab, var(--color-surface) 72%, transparent);
+  box-shadow: var(--shadow-border);
+  backdrop-filter: blur(18px);
+}
+
+.portrait-stage {
+  width: fit-content;
+  padding: 6px;
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-accent) 45%, transparent),
+    0 12px 40px rgb(0 0 0 / 0.35);
+}
+
+.portrait-float {
+  animation: portrait-float 7s ease-in-out infinite;
+}
+
+@keyframes portrait-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.logo-plate {
+  display: grid;
+  place-items: center;
+  height: 7.5rem;
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--color-elevated) 80%, transparent);
+  box-shadow: var(--shadow-border);
+}
+
+.logo-plate img {
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: contain;
+  border-radius: 0.85rem;
+}
+
+.section-3d,
 .section-3d.is-in {
   transform: none;
   opacity: 1;
@@ -593,7 +641,9 @@ html {
   .stat-pop,
   .section-3d,
   .avatar-3d,
-  .tilt-card {
+  .tilt-card,
+  .portrait-float,
+  .field-bg {
     animation: none !important;
     opacity: 1;
     transform: none;
