@@ -25,7 +25,28 @@ export function SelectedWork() {
             </button>
           ))}
         </div>
-        {items.length === 0 ? (
+        {filter === "NFT" ? (
+          <ul className="mt-6 grid gap-2">
+            {SITE.nftGiveaways.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glass-card flex items-center justify-between gap-3 rounded-xl px-4 py-3"
+                >
+                  <span>
+                    <span className="block text-sm font-medium">{item.project}</span>
+                    <span className="block text-xs text-muted">
+                      {item.spots} · {item.date}
+                    </span>
+                  </span>
+                  <ArrowUpRight className="size-4 shrink-0 text-subtle" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : items.length === 0 ? (
           <p className="mt-6 text-sm text-muted">Nothing in {filter} yet.</p>
         ) : (
           <ul className="mt-6 grid gap-3 md:grid-cols-3">
