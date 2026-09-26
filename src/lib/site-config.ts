@@ -408,13 +408,13 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
     },
   ],
   recent: {
-    label: "Last 14 days",
+    label: "3 months",
     source: "X analytics",
     items: [
-      { value: "409.2K", label: "Impressions", change: "+267%" },
-      { value: "26.5K", label: "Engagements", change: "+154%" },
-      { value: "4.2K", label: "Profile visits", change: "+171%" },
-      { value: "6.4%", label: "Engagement rate", change: null as string | null },
+      { value: "1M", label: "Impressions" },
+      { value: "4.9%", label: "Engagement rate" },
+      { value: "53.8K", label: "Engagements" },
+      { value: "8.7K", label: "Profile visits" },
     ],
   },
   statsNote: "X Analytics",

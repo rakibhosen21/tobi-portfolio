@@ -5,14 +5,12 @@ import { About } from "@/components/home/about";
 import { Collabs } from "@/components/home/collabs";
 import { Contact } from "@/components/home/contact";
 import { ContentReach } from "@/components/home/content-reach";
-import { CreatorStats } from "@/components/home/creator-stats";
 import { Experience } from "@/components/home/experience";
 import { Faq } from "@/components/home/faq";
 import { Hero } from "@/components/home/hero";
 import { Offers } from "@/components/home/offers";
 import { RecentProof } from "@/components/home/recent-proof";
 import { SelectedWork } from "@/components/home/selected-work";
-import { SocialStrip } from "@/components/home/social-strip";
 import { WhatIDo } from "@/components/home/what-i-do";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -31,8 +29,6 @@ function Home() {
           <SiteHeader />
           <main>
             <Hero />
-            <SocialStrip />
-            <CreatorStats />
             <About />
             <WhatIDo />
             <SelectedWork />
