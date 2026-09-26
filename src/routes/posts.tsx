@@ -38,9 +38,7 @@ function PostsSite() {
         </header>
         <p className="mt-10 text-[11px] font-semibold tracking-[0.28em] text-accent">@ox_tobiiii</p>
         <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight">Posts</h1>
-        <p className="mt-3 max-w-lg text-sm text-muted">
-          Videos, guidelines, and project campaigns. No GM posts.
-        </p>
+        <p className="mt-3 max-w-lg text-sm text-muted">Videos, guidelines, and project campaigns.</p>
         <div className="mt-6 flex flex-wrap gap-2">
           {filters.map((name) => (
             <button

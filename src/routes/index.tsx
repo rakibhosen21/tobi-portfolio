@@ -1,18 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { DepthLayer } from "@/components/depth-layer";
 import { FieldBackground } from "@/components/field-bg";
 import { HireProvider } from "@/components/hire-modal";
-import { About } from "@/components/home/about";
-import { Contact } from "@/components/home/contact";
-import { Ecosystems } from "@/components/home/ecosystems";
+import { Doors } from "@/components/home/doors";
 import { Hero } from "@/components/home/hero";
-import { HireBand } from "@/components/home/hire";
-import { Partnerships } from "@/components/home/partnerships";
-import { Posts } from "@/components/home/posts";
-import { Proof } from "@/components/home/proof";
-import { Services } from "@/components/home/services";
-import { Stats } from "@/components/home/stats";
-import { LookingFor } from "@/components/home/status";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -23,24 +13,16 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <HireProvider>
-      <div className="relative min-h-dvh overflow-x-hidden">
+      <div className="stage-3d relative min-h-dvh overflow-x-hidden">
         <FieldBackground />
-        <DepthLayer />
         <div className="noise-overlay pointer-events-none absolute inset-0 z-[1]" />
         <div className="relative z-10">
           <SiteHeader />
           <main>
             <Hero />
-            <About />
-            <Partnerships />
-            <Posts />
-            <Proof />
-            <Stats />
-            <Services />
-            <LookingFor />
-            <Ecosystems />
-            <HireBand />
-            <Contact />
+            <section className="px-4 pb-16 sm:px-6">
+              <Doors />
+            </section>
           </main>
           <SiteFooter />
         </div>

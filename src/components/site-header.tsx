@@ -4,10 +4,10 @@ import { HireButton } from "@/components/hire-modal";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#partnerships", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
   { href: "/posts", label: "Posts" },
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -16,7 +16,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-border/80 bg-bg/75 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
-        <a href="#top" className="font-display text-sm font-semibold tracking-[0.18em] text-fg">
+        <a href="/" className="font-display text-sm font-semibold tracking-[0.18em] text-fg">
           TOBI
         </a>
         <nav className="hidden items-center gap-5 lg:flex">

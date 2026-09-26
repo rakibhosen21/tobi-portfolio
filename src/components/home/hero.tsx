@@ -10,6 +10,7 @@ export function Hero() {
     <section id="top" className="relative px-4 pt-8 pb-16 sm:px-6 sm:pt-12">
       <div className="glass-board mx-auto max-w-3xl px-6 py-8 text-center sm:px-10 sm:py-10">
         <div className="portrait-stage mx-auto">
+          <span className="orbit-ring" aria-hidden="true" />
           <img
             src={SITE.avatar}
             alt={`${SITE.name} avatar`}

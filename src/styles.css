@@ -531,6 +531,7 @@ html {
 }
 
 .portrait-stage {
+  position: relative;
   width: fit-content;
   padding: 6px;
   border-radius: 999px;
@@ -606,10 +607,70 @@ html {
   }
 }
 
-.section-3d,
-.section-3d.is-in {
-  transform: none;
-  opacity: 1;
+.stage-3d {
+  perspective: 1400px;
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--color-accent) 75%, white);
+  box-shadow: 0 0 28px color-mix(in oklab, var(--color-accent) 50%, transparent);
+  transform: rotateX(68deg);
+  animation: orbit-spin 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotateX(68deg) rotateZ(360deg);
+  }
+}
+
+.door-slot {
+  transform-style: preserve-3d;
+  animation: door-in 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes door-in {
+  from {
+    opacity: 0;
+    transform: rotateY(32deg) translateZ(-48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.door-3d {
+  display: flex;
+  min-height: 6.75rem;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  padding: 0.9rem;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(18px);
+  transition: transform 160ms linear;
+}
+
+.card-rise {
+  transform-style: preserve-3d;
+  animation: card-rise 780ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: rotateX(14deg) translateY(28px) translateZ(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .stat-pop {
@@ -681,7 +742,10 @@ html {
   .tilt-card,
   .portrait-float,
   .field-bg,
-  .light-wash {
+  .light-wash,
+  .orbit-ring,
+  .door-slot,
+  .card-rise {
     animation: none !important;
     opacity: 1;
     transform: none;
