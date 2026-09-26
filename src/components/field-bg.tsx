@@ -48,14 +48,14 @@ export function FieldBackground() {
           const dy = ay - b.y * h;
           const dist = Math.hypot(dx, dy);
           if (dist < link) {
-            ctx.strokeStyle = `rgba(126, 224, 214, ${0.14 * (1 - dist / link)})`;
+            ctx.strokeStyle = `rgba(186, 245, 236, ${0.42 * (1 - dist / link)})`;
             ctx.beginPath();
             ctx.moveTo(ax, ay);
             ctx.lineTo(b.x * w, b.y * h);
             ctx.stroke();
           }
         }
-        ctx.fillStyle = "rgba(243, 243, 247, 0.55)";
+        ctx.fillStyle = "rgba(230, 255, 250, 0.9)";
         ctx.beginPath();
         ctx.arc(ax, ay, 1.4, 0, Math.PI * 2);
         ctx.fill();
@@ -72,5 +72,10 @@ export function FieldBackground() {
     };
   }, []);
 
-  return <canvas ref={ref} className="field-bg" aria-hidden="true" />;
+  return (
+    <>
+      <canvas ref={ref} className="field-bg" aria-hidden="true" />
+      <div className="light-wash" aria-hidden="true" />
+    </>
+  );
 }

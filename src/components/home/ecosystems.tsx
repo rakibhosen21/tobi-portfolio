@@ -12,9 +12,10 @@ export function Ecosystems() {
         </Reveal>
         <div className="marquee mt-8">
           <ul className="marquee-track">
-            {loop.map((name, i) => (
-              <li key={`${name}-${i}`} className="glass-card shrink-0 rounded-full px-4 py-2.5 text-sm text-muted">
-                {name}
+            {loop.map((item, i) => (
+              <li key={`${item.name}-${i}`} className="eco-pill glass-card shrink-0">
+                <img src={item.logo} alt="" width={18} height={18} />
+                {item.name}
               </li>
             ))}
           </ul>
