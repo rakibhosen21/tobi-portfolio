@@ -407,14 +407,29 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       href: "https://x.com/ox_tobiiii/status/2095693778971664391",
     },
   ],
-  recent: {
-    label: "3 months",
+  analytics: {
     source: "X analytics",
-    items: [
-      { value: "1M", label: "Impressions" },
-      { value: "4.9%", label: "Engagement rate" },
-      { value: "53.8K", label: "Engagements" },
-      { value: "8.7K", label: "Profile visits" },
+    ranges: [
+      {
+        id: "14d",
+        label: "14 days",
+        items: [
+          { value: "409.2K", label: "Impressions", change: "+267%", up: true },
+          { value: "6.4%", label: "Engagement rate", change: "−30%", up: false },
+          { value: "26.5K", label: "Engagements", change: "+154%", up: true },
+          { value: "4.2K", label: "Profile visits", change: "+171%", up: true },
+        ],
+      },
+      {
+        id: "3m",
+        label: "3 months",
+        items: [
+          { value: "1M", label: "Impressions", change: null, up: true },
+          { value: "4.9%", label: "Engagement rate", change: null, up: true },
+          { value: "53.8K", label: "Engagements", change: null, up: true },
+          { value: "8.7K", label: "Profile visits", change: null, up: true },
+        ],
+      },
     ],
   },
   statsNote: "X Analytics",
