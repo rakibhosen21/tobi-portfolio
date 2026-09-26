@@ -2,7 +2,7 @@ import { Check, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
-import { HireButton } from "@/components/hire-modal";
+import { ContactForm } from "@/components/home/contact-form";
 import { SITE } from "@/lib/site-config";
 
 export function Contact() {
@@ -60,17 +60,22 @@ export function Contact() {
               {SITE.availability}
             </span>
           </div>
-          <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-            Let's <span className="text-accent-grad">Work</span> Together
-          </h2>
-          <p className="mt-3 max-w-xl text-sm text-muted">
-            Web3 opportunity, creator role, community role, internship, or collab — reach out.
-          </p>
+          <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Let's build something together.</h2>
+          <p className="mt-3 max-w-xl text-sm text-muted">Have a Web3 project, campaign or idea? Let's talk.</p>
         </Reveal>
 
-        <Reveal className="mt-8">
-          <HireButton className="h-12 px-6" />
-        </Reveal>
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+          <a href={SITE.contact.x.href} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
+            DM on X
+          </a>
+          <a href={SITE.contact.telegram.href} target="_blank" rel="noreferrer" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
+            Telegram
+          </a>
+          <a href={SITE.contact.email.href} className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
+            Email Me
+          </a>
+        </div>
+        <ContactForm />
 
         <Reveal className="mt-8 grid gap-3 sm:grid-cols-2">
           {cards.map((card) => {

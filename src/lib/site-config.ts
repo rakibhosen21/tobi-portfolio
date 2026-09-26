@@ -3,30 +3,30 @@
 export const SITE = {
   name: "Tobi",
   handle: "ox_tobiiii",
-  title: "Tobi — Web3 Creator | Community | Content",
+  title: "Tobi | Web3 Creator & Crypto Researcher",
   description:
-    "Web3 creator and community contributor. Ambassador at BestChange & Action Model. Official KOL at Bitget Wallet.",
-  headline: "Web3 Creator, CT & Community",
+    "Web3 creator, crypto researcher and AI enthusiast creating content, researching projects and collaborating with Web3 teams.",
+  headline: "Web3 Creator. Researcher. Builder.",
   availability: "OPEN FOR WORK",
   availabilityNote: "OPEN TO OPPORTUNITIES",
   avatar: "/avatar.jpg",
-  identities: [
-    "Web3 Creator",
-    "Content Creator",
-    "Community Manager",
-    "Ambassador",
-    "KOL",
+  identities: ["Web3 Creator", "Crypto Researcher", "AI Enthusiast", "Artist", "Community Builder"],
+  tagline: "Web3 Creator | Crypto Researcher | AI Enthusiast | Artist",
+  heroSub: "I create content, research Web3 projects and help teams connect with the right audience.",
+  heroBody: `I create content, research Web3 projects and help teams connect with the right audience.`,
+  aboutTitle: "About",
+  about: `I'm Tobi, a Web3 content creator and crypto researcher from Asia. I started exploring Web3 in 2021 and turned that curiosity into content, research, communities and collaborations.
+
+I spend my time researching projects, creating content, testing products and talking to people who are actually building. Most of that happens on X and Telegram.
+
+Projects come to me for content, promotion, KOL campaigns, threads, video and Spaces.`,
+  creatorStats: [
+    { value: "8K+", label: "X followers" },
+    { value: "XXK+", label: "Content impressions" },
+    { value: "XX+", label: "Posts / replies" },
+    { value: "Since 2021", label: "In Web3" },
+    { value: "3", label: "Active partnerships" },
   ],
-  tagline: "Web3 Creator • Content Creator • Community Manager",
-  heroBody: `In Web3 since 2021. I make CT content, help communities grow, and work with teams as a creator, ambassador, and KOL.
-
-Open for creator roles, community roles, internships, ambassador work, and collaborations.`,
-  aboutTitle: "Who is Tobi?",
-  about: `Started in Web3 in 2021 by learning ecosystems and following CT.
-
-Now I ship content, show up in communities, and represent products I actually use — BestChange, Action Model, and Bitget Wallet.
-
-Looking for teams that need a creator who can write, engage, and stay consistent.`,
   contact: {
     x: {
       label: "X / Twitter",
@@ -100,11 +100,88 @@ Looking for teams that need a creator who can write, engage, and stay consistent
     "Project Collaboration",
   ],
   timeline: [
-    { year: "2021", title: "Entered Web3", text: "Started learning ecosystems and CT." },
-    { year: "2022–2024", title: "Building presence", text: "Content, community rooms, and ecosystem research." },
-    { year: "2025–2026", title: "Creator & KOL", text: "Ambassador and KOL work with live campaigns." },
-    { year: "Now", title: "Open for work", text: "Creator, community, intern, and collab roles." },
+    { year: "2021", title: "Started exploring Web3", text: "Learning ecosystems, crypto and CT." },
+    { year: "2024", title: "Content and communities", text: "Writing, showing up in rooms, and following projects closely." },
+    { year: "2025", title: "Working with projects", text: "Started earning through Web3 and taking creator work." },
+    { year: "2026", title: "Creator presence", text: "Collaborations, campaigns and more consistent content." },
   ],
+  whatIDo: [
+    { title: "Content Creation", text: "Native Web3 content written for X and other socials." },
+    { title: "Project Promotion", text: "Organic creator content that puts a project in front of a relevant audience." },
+    { title: "KOL Campaigns", text: "Creator campaigns where the message still sounds like me." },
+    { title: "Research", text: "Protocols, products, campaigns and the narratives forming around them." },
+    { title: "Community Growth", text: "Connecting projects with people who are already active in Web3." },
+    { title: "Video Content", text: "Short and long educational clips around projects and how they work." },
+    { title: "X Spaces", text: "Join or host conversations around a project or a narrative." },
+  ],
+  offers: [
+    { title: "Sponsored Posts", text: "A post on X about the project, in my voice." },
+    { title: "X Replies", text: "Replies that add context where the conversation already is." },
+    { title: "Quote Posts", text: "A quote post with a clear take, not a copy-paste line." },
+    { title: "Threads", text: "A short thread that explains the product or the campaign." },
+    { title: "Retweets", text: "Boost a post to people who already follow the work." },
+    { title: "Video Content", text: "A short or long video walking through the idea." },
+    { title: "Project Reviews", text: "A researched look at what the product actually does." },
+    { title: "Campaign Promotion", text: "Support for a live campaign, quest or launch." },
+    { title: "X Spaces", text: "A Space appearance or a hosted conversation." },
+    { title: "Community Collaborations", text: "Show up with a community, not only a one-off post." },
+  ],
+  work: [
+    {
+      name: "BestChange",
+      logo: "/assets/partners/bestchange.jpg",
+      category: "Web3",
+      description: "Crypto and e-money exchange aggregator.",
+      role: "Ambassador",
+      created: "Ongoing creator presence and campaign posts.",
+      href: "https://x.com/bestchangeeng",
+    },
+    {
+      name: "Action Model",
+      logo: "/assets/partners/action-model.jpg",
+      category: "AI",
+      description: "Community-owned AI agents and workflows.",
+      role: "Ambassador",
+      created: "Explainers, campaign posts and short video.",
+      href: "https://x.com/ActionModelAI",
+    },
+    {
+      name: "Bitget Wallet",
+      logo: "/assets/partners/bitget-wallet.svg",
+      category: "DeFi",
+      description: "Everyday finance wallet.",
+      role: "Official KOL",
+      created: "Creator coverage as an official KOL.",
+      href: "https://x.com/BitgetWallet",
+    },
+  ],
+  faq: [
+    {
+      q: "How can I work with Tobi?",
+      a: "DM on X, message on Telegram, or use the form. Say what the project is and what you need.",
+    },
+    {
+      q: "What type of Web3 projects does Tobi work with?",
+      a: "Web3, crypto, NFT, AI, DeFi and community-led products. If I don't use it or understand it, I'll say so.",
+    },
+    {
+      q: "What content formats are available?",
+      a: "Posts, replies, quote posts, threads, video, reviews and Spaces.",
+    },
+    {
+      q: "Can Tobi participate in creator campaigns?",
+      a: "Yes. KOL and launch campaigns are a normal part of the work.",
+    },
+    {
+      q: "How can I request the media kit?",
+      a: "Email oxtobiiii@gmail.com with the subject Media Kit, or hit Request Media Kit on this page.",
+    },
+    {
+      q: "How can I contact Tobi?",
+      a: "X @ox_tobiiii, Telegram @ox_tobiiii, or oxtobiiii@gmail.com.",
+    },
+  ],
+  testimonials: [] as readonly { name: string; role: string; project: string; href: string; quote: string }[],
   services: [
     {
       n: "01",

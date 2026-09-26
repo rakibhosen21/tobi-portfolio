@@ -1,14 +1,15 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { HireButton } from "@/components/hire-modal";
 import { KitLink } from "@/components/kit-link";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
-  { href: "/about", label: "About" },
-  { href: "/work", label: "Work" },
-  { href: "/posts", label: "Posts" },
-  { href: "/contact", label: "Contact" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#work", label: "Work" },
+  { href: "#services", label: "Services" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -33,7 +34,9 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-2">
           <KitLink className="hidden sm:inline-flex" />
-          <HireButton className="hidden sm:inline-flex h-9 px-3 text-sm" />
+          <a href="#contact" className="hidden h-9 items-center rounded-full bg-fg px-3 text-sm font-medium text-bg sm:inline-flex">
+            Work With Me
+          </a>
           <ThemeToggle />
           <button
             type="button"
@@ -60,7 +63,9 @@ export function SiteHeader() {
             ))}
             <div className="mt-2 flex flex-col gap-2">
               <KitLink className="justify-center" />
-              <HireButton className="w-full" />
+              <a href="#contact" onClick={() => setOpen(false)} className="inline-flex h-11 items-center justify-center rounded-full bg-fg text-sm font-medium text-bg">
+                Work With Me
+              </a>
             </div>
           </nav>
         </div>

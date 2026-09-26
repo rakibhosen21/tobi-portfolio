@@ -6,7 +6,8 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-4 py-10 text-center sm:px-6">
-        <p className="text-sm text-muted">Tobi — Web3 Creator & Community</p>
+        <p className="font-display text-lg">TOBI</p>
+        <p className="text-sm text-muted">{SITE.tagline}</p>
         <nav className="flex items-center gap-2 text-muted">
           <a
             href={SITE.contact.x.href}
@@ -47,9 +48,7 @@ export function SiteFooter() {
             <Mail className="size-4" />
           </a>
         </nav>
-        <a href="#top" className="text-xs tracking-[0.16em] text-subtle uppercase hover:text-accent">
-          Back to top
-        </a>
+        <p className="text-xs text-subtle">© 2026 Tobi. All rights reserved.</p>
       </div>
     </footer>
   );
