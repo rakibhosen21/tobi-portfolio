@@ -8,7 +8,7 @@ export function ContentReach() {
         <p className="text-[11px] font-semibold tracking-[0.22em] text-accent">CONTENT</p>
         <h2 className="mt-2 font-display text-3xl font-semibold">Content that reached people</h2>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {SITE.proof.map((post) => (
+          {SITE.proof.slice(0, 3).map((post) => (
             <li key={post.href}>
               <a
                 href={post.href}

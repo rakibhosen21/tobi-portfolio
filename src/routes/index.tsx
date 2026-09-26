@@ -10,9 +10,9 @@ import { Experience } from "@/components/home/experience";
 import { Faq } from "@/components/home/faq";
 import { Hero } from "@/components/home/hero";
 import { Offers } from "@/components/home/offers";
+import { RecentProof } from "@/components/home/recent-proof";
 import { SelectedWork } from "@/components/home/selected-work";
 import { SocialStrip } from "@/components/home/social-strip";
-import { Testimonials } from "@/components/home/testimonials";
 import { WhatIDo } from "@/components/home/what-i-do";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -40,8 +40,8 @@ function Home() {
             <ContentReach />
             <Offers />
             <Experience />
-            <Testimonials />
             <Faq />
+            <RecentProof />
             <Contact />
           </main>
           <SiteFooter />

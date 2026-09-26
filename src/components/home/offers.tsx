@@ -7,6 +7,19 @@ export function Offers() {
         <p className="text-[11px] font-semibold tracking-[0.22em] text-accent">SERVICES</p>
         <h2 className="mt-2 font-display text-3xl font-semibold">What you can book</h2>
         <p className="mt-2 max-w-xl text-sm text-muted">No public rate card. Ask for the media kit or send a note.</p>
+        <ol className="mt-6 grid gap-3 sm:grid-cols-3">
+          {[
+            ["1", "Send the brief", "Project, format, and when you need it."],
+            ["2", "We lock the format", "Post, thread, video, or a Space."],
+            ["3", "I deliver", "I reply on Telegram with the draft window."],
+          ].map(([step, title, text]) => (
+            <li key={step} className="glass-card rounded-xl p-4">
+              <p className="font-mono text-xs text-accent">{step}</p>
+              <p className="mt-1 text-sm font-medium">{title}</p>
+              <p className="mt-1 text-sm text-muted">{text}</p>
+            </li>
+          ))}
+        </ol>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {SITE.offers.map((item) => (
             <li key={item.title} className="glass-card rounded-xl p-4">

@@ -19,7 +19,7 @@ export const SITE = {
 
 I spend my time researching projects, creating content, testing products and talking to people who are actually building. Most of that happens on X and Telegram.
 
-Projects come to me for content, promotion, KOL campaigns, threads, video and Spaces.`,
+Projects come to me for content, promotion, KOL campaigns, threads, video and Spaces. I write in English. Most of the people reading are in Asia.`,
   creatorStats: [
     { value: "17.3K", label: "X followers" },
     { value: "13.8K", label: "Verified followers" },
@@ -135,6 +135,7 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       role: "Ambassador",
       created: "Ongoing creator presence and campaign posts.",
       href: "https://x.com/bestchangeeng",
+      post: null as string | null,
     },
     {
       name: "Action Model",
@@ -144,6 +145,7 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       role: "Ambassador",
       created: "Explainers, campaign posts and short video.",
       href: "https://x.com/ActionModelAI",
+      post: "https://x.com/ox_tobiiii/status/2097496137603432783",
     },
     {
       name: "Bitget Wallet",
@@ -153,6 +155,7 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       role: "Official KOL",
       created: "Creator coverage as an official KOL.",
       href: "https://x.com/BitgetWallet",
+      post: "https://x.com/ox_tobiiii/status/2093968762974421086",
     },
     {
       name: "Echobit",
@@ -162,6 +165,7 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       role: "Ambassador",
       created: "Official creator.",
       href: "https://x.com/EchobitExchange",
+      post: null as string | null,
     },
   ],
   faq: [
@@ -403,6 +407,16 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       href: "https://x.com/ox_tobiiii/status/2095693778971664391",
     },
   ],
+  recent: {
+    label: "Last 14 days",
+    source: "X analytics",
+    items: [
+      { value: "409.2K", label: "Impressions", change: "+267%" },
+      { value: "26.5K", label: "Engagements", change: "+154%" },
+      { value: "4.2K", label: "Profile visits", change: "+171%" },
+      { value: "6.4%", label: "Engagement rate", change: null as string | null },
+    ],
+  },
   statsNote: "X Analytics",
   stats: [
     { label: "Followers", value: 17300, format: "compact" as const, note: "13.8K verified · 14.6K active" },
