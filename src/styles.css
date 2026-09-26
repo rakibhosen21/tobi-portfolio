@@ -586,6 +586,56 @@ html {
   object-fit: contain;
 }
 
+.kit-link {
+  display: inline-flex;
+  align-items: center;
+  height: 2.25rem;
+  border-radius: 999px;
+  padding: 0 0.8rem;
+  font-size: 0.8125rem;
+  color: var(--color-fg);
+  box-shadow: var(--shadow-border);
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ok, #7dffa3);
+  background: color-mix(in oklab, var(--color-ok, #7dffa3) 12%, transparent);
+  box-shadow: 0 0 18px color-mix(in oklab, var(--color-accent) 35%, transparent);
+}
+
+.hero-mesh {
+  position: relative;
+}
+
+.hero-mesh::before {
+  content: "";
+  position: absolute;
+  inset: 0 6% auto;
+  height: 18rem;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 40%, rgb(126 224 214 / 0.18), transparent 46%),
+    radial-gradient(circle at 78% 30%, rgb(150 130 255 / 0.16), transparent 48%);
+  animation: light-drift 16s ease-in-out infinite alternate;
+}
+
+.social-strip {
+  scrollbar-width: none;
+}
+
+.social-strip::-webkit-scrollbar {
+  display: none;
+}
+
 .light-wash {
   position: fixed;
   inset: -10%;

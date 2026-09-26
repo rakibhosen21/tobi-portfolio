@@ -3,6 +3,7 @@ import { FieldBackground } from "@/components/field-bg";
 import { HireProvider } from "@/components/hire-modal";
 import { Doors } from "@/components/home/doors";
 import { Hero } from "@/components/home/hero";
+import { SocialStrip } from "@/components/home/social-strip";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -20,6 +21,7 @@ function Home() {
           <SiteHeader />
           <main>
             <Hero />
+            <SocialStrip />
             <section className="px-4 pb-16 sm:px-6">
               <Doors />
             </section>

@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { HireButton } from "@/components/hire-modal";
+import { KitLink } from "@/components/kit-link";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
@@ -31,6 +32,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <KitLink className="hidden sm:inline-flex" />
           <HireButton className="hidden sm:inline-flex h-9 px-3 text-sm" />
           <ThemeToggle />
           <button
@@ -56,7 +58,8 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <div className="mt-2">
+            <div className="mt-2 flex flex-col gap-2">
+              <KitLink className="justify-center" />
               <HireButton className="w-full" />
             </div>
           </nav>

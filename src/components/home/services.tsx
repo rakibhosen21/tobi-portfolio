@@ -1,4 +1,5 @@
 import { PenLine, Users, Megaphone, GraduationCap } from "lucide-react";
+import { Builders } from "@/components/home/builders";
 import { SITE } from "@/lib/site-config";
 
 const icons = [PenLine, Users, Megaphone, GraduationCap];
@@ -35,6 +36,7 @@ export function Services() {
             );
           })}
         </div>
+        <Builders />
       </div>
     </section>
   );

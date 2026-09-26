@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { FieldBackground } from "@/components/field-bg";
+import { KitLink } from "@/components/kit-link";
 import { SITE } from "@/lib/site-config";
 
 export const Route = createFileRoute("/posts")({
@@ -32,9 +33,12 @@ function PostsSite() {
           <Link to="/" className="font-display text-sm font-semibold tracking-[0.18em]">
             TOBI
           </Link>
-          <Link to="/" className="text-sm text-muted hover:text-fg">
-            Back to portfolio
-          </Link>
+          <span className="flex items-center gap-3">
+            <KitLink />
+            <Link to="/" className="text-sm text-muted hover:text-fg">
+              Back to portfolio
+            </Link>
+          </span>
         </header>
         <p className="mt-10 text-[11px] font-semibold tracking-[0.28em] text-accent">@ox_tobiiii</p>
         <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight">Posts</h1>

@@ -19,6 +19,7 @@ export function Stats() {
           <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">NUMBERS</p>
           <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">Stats</h2>
           <p className="mt-2 text-sm text-muted">{SITE.statsNote}</p>
+          <p className="mt-1 text-[11px] text-subtle">Last updated {SITE.statsUpdated}</p>
         </Reveal>
         <div className="mt-6 grid grid-cols-2 gap-3">
           {SITE.stats.map((stat) => (
