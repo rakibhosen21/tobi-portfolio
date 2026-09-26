@@ -1,7 +1,6 @@
 import { Check, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 import { DiscordLogo, TelegramLogo, XLogo } from "@/components/icons";
-import { Reveal } from "@/components/reveal";
 import { SITE } from "@/lib/site-config";
 
 export function Contact() {
@@ -13,105 +12,59 @@ export function Contact() {
     window.setTimeout(() => setCopied(false), 1600);
   }
 
-  const cards = [
-    {
-      key: "x",
-      label: SITE.contact.x.label,
-      handle: `@${SITE.contact.x.handle}`,
-      cta: SITE.contact.x.cta,
-      href: SITE.contact.x.href,
-      icon: XLogo,
-    },
-    {
-      key: "telegram",
-      label: SITE.contact.telegram.label,
-      handle: SITE.contact.telegram.handle,
-      cta: SITE.contact.telegram.cta,
-      href: SITE.contact.telegram.href,
-      icon: TelegramLogo,
-    },
-    {
-      key: "email",
-      label: SITE.contact.email.label,
-      handle: SITE.contact.email.handle,
-      cta: SITE.contact.email.cta,
-      href: SITE.contact.email.href,
-      icon: Mail,
-    },
-    {
-      key: "youtube",
-      label: SITE.contact.youtube.label,
-      handle: SITE.contact.youtube.handle,
-      cta: SITE.contact.youtube.cta,
-      href: SITE.contact.youtube.href,
-      icon: Youtube,
-    },
+  const links = [
+    { key: "x", label: "X", href: SITE.contact.x.href, icon: XLogo },
+    { key: "telegram", label: "Telegram", href: SITE.contact.telegram.href, icon: TelegramLogo },
+    { key: "email", label: "Email", href: SITE.contact.email.href, icon: Mail },
+    { key: "youtube", label: "YouTube", href: SITE.contact.youtube.href, icon: Youtube },
   ] as const;
 
   return (
     <section id="contact" className="section-3d px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <div className="flex flex-wrap items-center gap-3">
-            <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">CONTACT</p>
-            <span className="inline-flex items-center gap-2 rounded-full bg-ok/10 px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-ok uppercase">
-              <span className="size-1.5 rounded-full bg-ok" style={{ animation: "pulse-live 1.8s ease-in-out infinite" }} />
-              {SITE.availability}
-            </span>
-          </div>
-          <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Let's build something together.</h2>
-          <p className="mt-3 max-w-xl text-sm text-muted">Have a Web3 project, campaign or idea? Let's talk.</p>
-        </Reveal>
-
-        <div className="mt-6 flex flex-col gap-2 sm:max-w-xl">
-          <a href="/hire" className="inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
-            Hire me
-          </a>
-          <a href={SITE.contact.x.href} target="_blank" rel="noreferrer" className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
-            DM on X
-          </a>
-          <a href={SITE.contact.email.href} className="glow-ring inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium">
-            Email Me
-          </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-[11px] font-semibold tracking-[0.28em] text-accent">CONTACT</p>
+          <span className="inline-flex items-center gap-2 rounded-full bg-ok/10 px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-ok uppercase">
+            <span className="size-1.5 rounded-full bg-ok" style={{ animation: "pulse-live 1.8s ease-in-out infinite" }} />
+            {SITE.availability}
+          </span>
         </div>
-
-        <Reveal className="mt-8 grid gap-3 sm:grid-cols-2">
-          {cards.map((card) => {
-            const Icon = card.icon;
+        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Let's build something together.</h2>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
+          Have a Web3 project, campaign, creator role or collab? Tap a logo. Telegram is the fastest reply.
+          X opens my profile. Email is for a longer brief. YouTube is the channel. Discord has no public page,
+          so that logo copies the username {SITE.contact.discord.handle}.
+        </p>
+        <a href="/hire" className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-fg px-5 text-sm font-medium text-bg">
+          Hire me
+        </a>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {links.map((item) => {
+            const Icon = item.icon;
             return (
               <a
-                key={card.key}
-                href={card.href}
-                target={card.href.startsWith("http") ? "_blank" : undefined}
-                rel={card.href.startsWith("http") ? "noreferrer" : undefined}
-                className="glass-card flex items-center justify-between gap-3 rounded-xl px-4 py-4"
+                key={item.key}
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                aria-label={item.label}
+                title={item.label}
+                className="glass-card grid size-12 place-items-center rounded-full"
               >
-                <span className="flex items-center gap-3">
-                  <Icon className="size-4 text-accent" />
-                  <span>
-                    <span className="block text-[11px] tracking-[0.14em] text-subtle uppercase">{card.label}</span>
-                    <span className="text-sm font-medium text-fg">{card.handle}</span>
-                  </span>
-                </span>
-                <span className="text-xs text-muted">{card.cta}</span>
+                <Icon className="size-5 text-accent" />
               </a>
             );
           })}
           <button
             type="button"
             onClick={() => void copyDiscord()}
-            className="glass-card flex items-center justify-between gap-3 rounded-xl px-4 py-4 text-left"
+            aria-label={copied ? "Discord username copied" : "Copy Discord username"}
+            title={copied ? "Copied" : "Copy Discord username"}
+            className="glass-card grid size-12 place-items-center rounded-full"
           >
-            <span className="flex items-center gap-3">
-              {copied ? <Check className="size-4 text-ok" /> : <DiscordLogo className="size-4 text-accent" />}
-              <span>
-                <span className="block text-[11px] tracking-[0.14em] text-subtle uppercase">Discord</span>
-                <span className="text-sm font-medium text-fg">{SITE.contact.discord.handle}</span>
-              </span>
-            </span>
-            <span className="text-xs text-muted">{copied ? "Copied" : "Copy username"}</span>
+            {copied ? <Check className="size-5 text-ok" /> : <DiscordLogo className="size-5 text-accent" />}
           </button>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
