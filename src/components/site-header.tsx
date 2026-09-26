@@ -4,7 +4,6 @@ import { KitLink } from "@/components/kit-link";
 
 const links = [
   { href: "#work", label: "Work" },
-  { href: "/nft", label: "NFT" },
   { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ];
