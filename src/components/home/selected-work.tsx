@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { SITE } from "@/lib/site-config";
 
-const filters = ["All", "Web3", "AI", "NFT", "DeFi", "Campaigns"] as const;
+const filters = ["All", "Web3", "AI", "NFT", "DeFi"] as const;
 
 export function SelectedWork() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");

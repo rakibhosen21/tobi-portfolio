@@ -7,7 +7,13 @@ export function SiteFooter() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-4 py-10 text-center sm:px-6">
         <p className="font-display text-lg">TOBI</p>
-        <p className="text-sm text-muted">{SITE.tagline}</p>
+        <p className="max-w-md text-sm text-muted">Web3 creator and community contributor.</p>
+        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted">
+          <a href="/hire" className="hover:text-fg">Hire</a>
+          <a href="/kit" className="hover:text-fg">Media kit</a>
+          <a href="/nft" className="hover:text-fg">NFT</a>
+          <a href="/posts" className="hover:text-fg">Posts</a>
+        </nav>
         <nav className="flex items-center gap-2 text-muted">
           <a
             href={SITE.contact.x.href}

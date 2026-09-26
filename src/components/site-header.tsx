@@ -3,12 +3,9 @@ import { useState } from "react";
 import { KitLink } from "@/components/kit-link";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
   { href: "#work", label: "Work" },
-  { href: "#services", label: "Services" },
   { href: "/nft", label: "NFT" },
-  { href: "#experience", label: "Experience" },
+  { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ];
 
