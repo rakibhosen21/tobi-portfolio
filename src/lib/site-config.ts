@@ -154,6 +154,15 @@ Projects come to me for content, promotion, KOL campaigns, threads, video and Sp
       created: "Creator coverage as an official KOL.",
       href: "https://x.com/BitgetWallet",
     },
+    {
+      name: "Echobit",
+      logo: "/assets/partners/echobit.jpg",
+      category: "Web3",
+      description: "Global crypto exchange for futures.",
+      role: "Ambassador",
+      created: "Official creator.",
+      href: "https://x.com/EchobitExchange",
+    },
   ],
   faq: [
     {

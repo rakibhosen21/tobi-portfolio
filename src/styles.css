@@ -564,63 +564,69 @@ html {
 .liquid {
   position: absolute;
   border-radius: 50%;
-  filter: blur(64px);
-  mix-blend-mode: screen;
-  opacity: 0.55;
+  filter: blur(48px);
+  opacity: 0.9;
   will-change: transform;
 }
 
 .l1 {
-  width: 62vw;
-  height: 62vw;
-  left: -14%;
-  top: -6%;
-  background: radial-gradient(circle, rgb(124 72 255 / 0.85), rgb(40 16 90 / 0) 70%);
-  animation: liq-a 34s ease-in-out infinite alternate;
+  width: 78vw;
+  height: 78vw;
+  left: -28%;
+  top: -18%;
+  background: radial-gradient(circle, rgb(138 78 255 / 0.72), rgb(40 16 90 / 0) 68%);
+  animation: liq-a 28s ease-in-out infinite alternate;
 }
 
 .l2 {
-  width: 48vw;
-  height: 48vw;
-  right: -12%;
-  top: 2%;
-  background: radial-gradient(circle, rgb(255 92 168 / 0.62), rgb(160 40 120 / 0) 68%);
-  animation: liq-b 40s ease-in-out infinite alternate;
+  width: 86vw;
+  height: 72vw;
+  right: -30%;
+  top: -8%;
+  background: radial-gradient(circle, rgb(255 86 168 / 0.62), rgb(90 40 180 / 0) 70%);
+  animation: liq-b 32s ease-in-out infinite alternate;
 }
 
 .l3 {
-  width: 42vw;
-  height: 42vw;
-  left: 8%;
-  bottom: -8%;
-  background: radial-gradient(circle, rgb(46 196 176 / 0.5), rgb(40 120 80 / 0) 70%);
-  animation: liq-c 46s ease-in-out infinite alternate;
+  width: 70vw;
+  height: 58vw;
+  left: -10%;
+  bottom: -6%;
+  background: radial-gradient(circle, rgb(42 196 186 / 0.5), rgb(30 90 70 / 0) 70%);
+  animation: liq-c 36s ease-in-out infinite alternate;
 }
 
 .l4 {
-  width: 34vw;
-  height: 34vw;
-  right: 6%;
-  bottom: 12%;
-  background: radial-gradient(circle, rgb(255 132 64 / 0.38), rgb(180 40 80 / 0) 70%);
-  animation: liq-d 36s ease-in-out infinite alternate;
+  width: 52vw;
+  height: 52vw;
+  right: -8%;
+  bottom: 8%;
+  background: radial-gradient(circle, rgb(255 128 64 / 0.42), rgb(160 30 70 / 0) 70%);
+  animation: liq-d 30s ease-in-out infinite alternate;
 }
 
 .l5 {
-  width: 36vw;
-  height: 36vw;
-  left: 28%;
-  top: 34%;
-  background: radial-gradient(circle, rgb(90 140 255 / 0.36), rgb(180 60 200 / 0) 72%);
-  animation: liq-e 42s ease-in-out infinite alternate;
+  width: 54vw;
+  height: 54vw;
+  left: 22%;
+  top: 28%;
+  background: radial-gradient(circle, rgb(86 130 255 / 0.4), rgb(170 50 190 / 0) 72%);
+  animation: liq-e 34s ease-in-out infinite alternate;
 }
 
 .aura-veil {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgb(7 7 11 / 0.18), rgb(7 7 11 / 0.42) 42%, rgb(7 7 11 / 0.62)),
-    linear-gradient(90deg, rgb(7 7 11 / 0.5) 0%, rgb(7 7 11 / 0.16) 46%, rgb(7 7 11 / 0.08) 100%);
+  background: linear-gradient(180deg, rgb(7 7 11 / 0.08), rgb(7 7 11 / 0.28) 55%, rgb(7 7 11 / 0.5));
+}
+
+.aura-dust {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 @keyframes liq-a {
@@ -649,8 +655,7 @@ html {
 }
 
 @media (max-width: 760px) {
-  .l5 { display: none; }
-  .liquid { filter: blur(46px); opacity: 0.48; }
+  .liquid { filter: blur(36px); }
 }
 
 .aura-light {

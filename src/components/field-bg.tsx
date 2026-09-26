@@ -35,9 +35,6 @@ export function FieldBackground() {
     let my = 0;
     let tx = 0;
     let ty = 0;
-    let downX = 0;
-    let downY = 0;
-    let tracking = false;
     const blooms: Bloom[] = [];
 
     const resize = () => {
@@ -80,10 +77,10 @@ export function FieldBackground() {
         }
         const ease = 1 - (1 - p) ** 3;
         const fade = p < 0.12 ? p / 0.12 : 1 - (p - 0.12) / 0.88;
-        const radius = (mobile ? 92 : 148) * ease;
+        const radius = (mobile ? 120 : 170) * ease;
         const glow = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, radius);
-        glow.addColorStop(0, `rgba(${b.c1}, ${0.42 * fade})`);
-        glow.addColorStop(0.42, `rgba(${b.c2}, ${0.2 * fade})`);
+        glow.addColorStop(0, `rgba(${b.c1}, ${0.72 * fade})`);
+        glow.addColorStop(0.42, `rgba(${b.c2}, ${0.38 * fade})`);
         glow.addColorStop(1, `rgba(${b.c2}, 0)`);
         ctx.fillStyle = glow;
         ctx.beginPath();
@@ -107,6 +104,7 @@ export function FieldBackground() {
     };
 
     const frame = (now: number) => {
+      raf = 0;
       if (fine) {
         tx += (mx - tx) * 0.04;
         ty += (my - ty) * 0.04;
@@ -121,16 +119,7 @@ export function FieldBackground() {
       mx = e.clientX / window.innerWidth - 0.5;
       my = e.clientY / window.innerHeight - 0.5;
     };
-    const onDown = (e: PointerEvent) => {
-      if (e.button !== 0 && e.pointerType === "mouse") return;
-      tracking = true;
-      downX = e.clientX;
-      downY = e.clientY;
-    };
-    const onUp = (e: PointerEvent) => {
-      if (!tracking) return;
-      tracking = false;
-      if (Math.hypot(e.clientX - downX, e.clientY - downY) > 12) return;
+    const onClick = (e: MouseEvent) => {
       spawn(e.clientX, e.clientY);
       if (!raf) raf = requestAnimationFrame(frame);
     };
@@ -139,11 +128,7 @@ export function FieldBackground() {
     window.addEventListener("resize", resize);
     if (!reduce) {
       if (fine) window.addEventListener("pointermove", onMove, { passive: true });
-      window.addEventListener("pointerdown", onDown, { passive: true });
-      window.addEventListener("pointerup", onUp, { passive: true });
-      window.addEventListener("pointercancel", () => {
-        tracking = false;
-      });
+      window.addEventListener("click", onClick);
       raf = requestAnimationFrame(frame);
     }
 
@@ -151,8 +136,7 @@ export function FieldBackground() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerdown", onDown);
-      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("click", onClick);
     };
   }, []);
 

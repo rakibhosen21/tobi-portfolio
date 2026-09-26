@@ -4,17 +4,18 @@ import { SITE } from "@/lib/site-config";
 export function Hero() {
   return (
     <section id="home" className="hero-mesh px-4 pt-10 pb-8 sm:px-6 sm:pt-16">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[auto_1fr]">
-        <img
-          src={SITE.avatar}
-          alt="Tobi"
-          width={160}
-          height={160}
-          className="size-24 rounded-full object-cover shadow-[var(--shadow-border)] sm:size-32"
-        />
-        <div>
+      <div className="mx-auto max-w-6xl">
+        <div className="flex items-center gap-4">
+          <img
+            src={SITE.avatar}
+            alt="Tobi"
+            width={160}
+            height={160}
+            className="size-20 shrink-0 rounded-full object-cover shadow-[var(--shadow-border)] sm:size-28"
+          />
           <p className="text-[11px] font-semibold tracking-[0.22em] text-accent">@{SITE.handle}</p>
-          <h1 className="mt-3 max-w-xl font-display text-4xl font-semibold tracking-tight sm:text-6xl">
+        </div>
+        <h1 className="mt-5 max-w-xl font-display text-4xl font-semibold tracking-tight sm:text-6xl">
             {SITE.headline}
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">{SITE.heroSub}</p>
@@ -35,7 +36,6 @@ export function Hero() {
               <ArrowUpRight className="size-4" />
             </a>
           </div>
-        </div>
       </div>
     </section>
   );
