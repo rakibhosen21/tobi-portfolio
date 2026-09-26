@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { FieldBackground } from "@/components/field-bg";
 import { KitLink } from "@/components/kit-link";
 import { SITE } from "@/lib/site-config";
@@ -9,8 +9,8 @@ export const Route = createFileRoute("/posts")({
   component: PostsSite,
   head: () => ({
     meta: [
-      { title: "Posts — Tobi" },
-      { name: "description", content: "Project videos, guides, and campaigns from @ox_tobiiii." },
+      { title: "Creation — Tobi" },
+      { name: "description", content: "Project posts from the last month on @ox_tobiiii." },
     ],
   }),
 });
@@ -41,8 +41,10 @@ function PostsSite() {
           </span>
         </header>
         <p className="mt-10 text-[11px] font-semibold tracking-[0.28em] text-accent">@ox_tobiiii</p>
-        <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight">Posts</h1>
-        <p className="mt-3 max-w-lg text-sm text-muted">Videos, guidelines, and project campaigns.</p>
+        <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight">Creation</h1>
+        <p className="mt-3 max-w-lg text-sm text-muted">
+          Project posts from the last month. Counts are from X on 26 Sep 2026. Open a post to see the live numbers.
+        </p>
         <div className="mt-6 flex flex-wrap gap-2">
           {filters.map((name) => (
             <button
@@ -76,8 +78,11 @@ function PostsSite() {
                   <ArrowUpRight className="size-3.5 text-subtle transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-fg">{post.text}</p>
-                <p className="mt-3 font-mono text-[11px] text-subtle">
-                  {post.likes} likes · {post.replies} replies · {post.views} views
+                <p className="mt-4 flex items-center gap-4 text-sm text-muted">
+                  <span className="inline-flex items-center gap-1"><MessageCircle className="size-4" />{post.replies}</span>
+                  <span className="inline-flex items-center gap-1"><Repeat2 className="size-4" />{post.reposts}</span>
+                  <span className="inline-flex items-center gap-1"><Heart className="size-4" />{post.likes}</span>
+                  <span className="ml-auto text-xs">{post.views}</span>
                 </p>
               </a>
             </li>
